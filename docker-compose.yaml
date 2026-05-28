@@ -1,0 +1,33 @@
+
+services:
+  servidor:
+    build: .
+    container_name: servidor_redes
+    volumes:
+      - .:/app
+    working_dir: /app
+
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    privileged: true
+
+    stdin_open: true
+    tty: true
+    command: tail -f /dev/null
+
+  cliente:
+    build: .
+    container_name: cliente_redes
+    volumes:
+      - .:/app
+    working_dir: /app
+
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    privileged: true
+
+    stdin_open: true
+    tty: true
+    command: tail -f /dev/null
