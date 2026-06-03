@@ -17,6 +17,7 @@ import json
 import hashlib
 import os
 import time
+import base64
 
 # ─────────────────────────────────────────────────────────────
 # CONFIGURAÇÕES
@@ -64,6 +65,7 @@ def desempacotar_mensagem(pacote_bytes: bytes) -> dict | None:
 
 def enviar_ack(sock: socket.socket, endereco: tuple, seq: int, ok: bool):
     """Envia ACK (ok=True) ou NAK (ok=False)."""
+    print(f'[{"ACK" if ok else "NAK"}] enviando seq={seq}')
     pacote_ack = empacotar_mensagem({
         'tipo': 'ACK' if ok else 'NAK',
         'seq' : seq,
@@ -88,15 +90,12 @@ def receber_saw(sock: socket.socket, cliente: tuple, meta: dict) -> bytes | None
     chunks_recebidos = {}
     esperado_seq    = 0
 
-    print(f'[SAW] Iniciando recepção: {total_chunks} chunk(s) — {meta["nome_arquivo"]}')
-
     while esperado_seq < total_chunks:
         # ── aguarda próximo pacote ──────────────────────────────
         try:
             pacote_recebido, _ = sock.recvfrom(TAM_BUFFER)
         except socket.timeout:
             # sem pacote no timeout → cliente vai retransmitir por conta própria
-            print(f'[SAW] Aguardando chunk {esperado_seq}...')
             continue
 
         mensagem = desempacotar_mensagem(pacote_recebido)
@@ -104,24 +103,25 @@ def receber_saw(sock: socket.socket, cliente: tuple, meta: dict) -> bytes | None
             continue                          # ignora pacotes inválidos/desconhecidos
 
         seq      = mensagem['seq']
-        dado     = bytes.fromhex(mensagem['dado'])
+        dado     = base64.b64decode(mensagem['dado'])
         checksum_recebido = mensagem['checksum']
+
+        print(f'[DATA] recebido seq={seq} esperado={esperado_seq}')
 
         # ── valida integridade ──────────────────────────────────
         if calcular_checksum_md5(dado) != checksum_recebido:
-            print(f'[SAW] ✗ Chunk {seq} corrompido (checksum MD5 falhou) → NAK')
+            print(f'[ERRO] checksum inválido em seq={seq}')
             enviar_ack(sock, cliente, seq, ok=False)
             continue
         # ── verifica sequência ──────────────────────────────────
         if seq != esperado_seq:
-            print(f'[SAW] ✗ Chunk fora de ordem '
-                  f'(recebido={seq}, esperado={esperado_seq}) → NAK')
+            print(f'[ERRO] seq fora de ordem: recebido={seq} esperado={esperado_seq}')
             enviar_ack(sock, cliente, seq, ok=False)
             continue
 
         # ── chunk válido ────────────────────────────────────────
         chunks_recebidos[esperado_seq] = dado
-        print(f'[SAW] ✓ Chunk {seq}/{total_chunks-1} OK ({len(dado)} B) → ACK')
+        print(f'[OK] seq={seq} confirmado')
         enviar_ack(sock, cliente, seq, ok=True)
         esperado_seq += 1
 
@@ -202,11 +202,12 @@ def main():
             destino = os.path.join(PASTA_SAIDA, meta['nome_arquivo'])
             with open(destino, 'wb') as f:
                 f.write(dados)
-            print(f'[OK] Salvo em: {destino}')
             total_recebido = len(dados)
             throughput_mbps = (total_recebido * 8) / duracao / 1_000_000 if duracao > 0 else 0
 
+            print(f'[OK] Salvo em: {destino}')
             print(f'Pacotes recebidos: {meta["total_chunks"]}')
+
             print(f'Bytes recebidos: {total_recebido}')
             print(f'Tempo de recepção: {duracao:.6f} s')
             print(f'Throughput estimado: {throughput_mbps:.6f} Mbps')
@@ -216,6 +217,7 @@ def main():
                 'status' : 'OK',
                 'sha256' : sha_calculado,
             })
+            print('[FIN] enviando confirmação final')
             socket_servidor.sendto(fin, cliente)
             print()
 

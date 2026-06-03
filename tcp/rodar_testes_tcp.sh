@@ -7,6 +7,7 @@ SERVER_CONTAINER="servidor_redes"
 
 CLIENT_SCRIPT="/app/tcp/cliente_tcp.py"
 SERVER_SCRIPT="/app/tcp/servidor_tcp.py"
+NET_IFACE="eth0"
 
 LOG_DIR="./logs"
 PCAP_DIR="./pcaps"
@@ -62,6 +63,7 @@ esac
 # =========================================================
 
 CSV_FILE="$LOG_DIR/${NOME}.csv"
+PCAP_EXEC_DIR="${PCAP_DIR}/${NOME}_execucoes"
 
 echo "execucao,bytes,tempo_s,throughput_mbps" \
 > $CSV_FILE
@@ -73,7 +75,7 @@ echo "execucao,bytes,tempo_s,throughput_mbps" \
 reset_tc() {
 
     docker exec $CLIENT_CONTAINER \
-        tc qdisc del dev eth0 root 2>/dev/null
+    tc qdisc del dev $NET_IFACE root 2>/dev/null
 }
 
 apply_tc() {
@@ -81,9 +83,20 @@ apply_tc() {
     reset_tc
 
     docker exec $CLIENT_CONTAINER \
-        tc qdisc add dev eth0 root netem \
+        tc qdisc add dev $NET_IFACE root netem \
         delay ${DELAY}ms \
         loss ${LOSS}%
+}
+
+iniciar_tcpdump() {
+    ARQ_PCAP="$1"
+    docker exec $CLIENT_CONTAINER sh -c \
+        "tcpdump -n -i ${NET_IFACE} -s 0 -U tcp port 12345 -w /app/${ARQ_PCAP} >/dev/null 2>&1 & echo \$!"
+}
+
+encerrar_tcpdump() {
+    PID_TCPDUMP="$1"
+    docker exec $CLIENT_CONTAINER sh -c "kill ${PID_TCPDUMP} 2>/dev/null"
 }
 
 # =========================================================
@@ -103,6 +116,11 @@ docker exec $CLIENT_CONTAINER \
     pkill tcpdump 2>/dev/null
 
 rm -f $PCAP_DIR/${NOME}.pcap
+rm -rf $PCAP_EXEC_DIR
+mkdir -p $PCAP_EXEC_DIR
+
+docker exec $CLIENT_CONTAINER sh -c \
+    "rm -f /app/${NOME}.pcap /app/${NOME}_exec_*.pcap"
 
 # =========================================================
 # APLICA CENÁRIO
@@ -122,7 +140,7 @@ apply_tc
 
 echo ""
 echo "TC aplicado:"
-docker exec $CLIENT_CONTAINER tc qdisc show dev eth0
+docker exec $CLIENT_CONTAINER tc qdisc show dev $NET_IFACE
 echo ""
 
 # =========================================================
@@ -131,9 +149,7 @@ echo ""
 
 echo "Iniciando captura tcpdump..."
 
-docker exec -d $CLIENT_CONTAINER \
-    tcpdump -n -i eth0 -s 0 -U tcp port 12345 \
-    -w /app/${NOME}.pcap
+PID_TCPDUMP_COMPLETO=$(iniciar_tcpdump "${NOME}.pcap")
 
 sleep 2
 
@@ -167,8 +183,17 @@ do
     # Executa cliente
     # -----------------------------------------------------
 
+    PCAP_EXEC="${NOME}_exec_${i}.pcap"
+    PID_TCPDUMP_EXEC=$(iniciar_tcpdump "${PCAP_EXEC}")
+
+    sleep 1
+
     OUTPUT=$(docker exec $CLIENT_CONTAINER \
         python3 $CLIENT_SCRIPT)
+
+    encerrar_tcpdump "$PID_TCPDUMP_EXEC"
+
+    sleep 1
 
     echo "$OUTPUT"
 
@@ -202,6 +227,10 @@ do
     echo "$i,$BYTES,$TEMPO,$THROUGHPUT" \
         >> $CSV_FILE
 
+    docker cp \
+        $CLIENT_CONTAINER:/app/${PCAP_EXEC} \
+        $PCAP_EXEC_DIR/${PCAP_EXEC}
+
     sleep 2
 
 done
@@ -213,8 +242,7 @@ done
 echo ""
 echo "Encerrando tcpdump..."
 
-docker exec $CLIENT_CONTAINER \
-    pkill tcpdump
+encerrar_tcpdump "$PID_TCPDUMP_COMPLETO"
 
 sleep 2
 
@@ -249,6 +277,7 @@ echo "========================================"
 echo ""
 echo "CSV  : $CSV_FILE"
 echo "PCAP : $PCAP_DIR/${NOME}.pcap"
+echo "PCAPs individuais: $PCAP_EXEC_DIR"
 echo ""
 echo "Logs individuais:"
 echo "$LOG_DIR/"

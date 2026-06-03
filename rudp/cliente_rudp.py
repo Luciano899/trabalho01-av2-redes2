@@ -4,10 +4,11 @@ import hashlib
 import os
 import sys
 import time
+import base64
 
 HOST = 'servidor'
 PORTA = 12345
-CHUNK_SIZE = 1400
+CHUNK_SIZE = 900
 TIMEOUT = 0.5
 MAX_TENTATIVAS = 10
 ARQUIVO = 'output/arquivo_envio_trabalhoRedes2.txt'
@@ -33,7 +34,6 @@ def desempacotar_mensagem(pacote_bytes: bytes) -> dict | None:
     try:
         mensagem = json.loads(pacote_bytes.decode('utf-8'))
         if mensagem.get('X-Custom-Auth') != X_CUSTOM_AUTH:
-            print('[AVISO] Resposta com X-Custom-Auth inválido — descartada.')
             return None
         return mensagem
     except Exception as e:
@@ -81,16 +81,16 @@ def realizar_handshake(socket_cliente: socket.socket, endereco_servidor: tuple,n
         'ts': time.time(),
     })
     for tentativa in range(1, MAX_TENTATIVAS + 1):
-        print(f'[SYN] Tentativa {tentativa}/{MAX_TENTATIVAS}...')
+        print(f'[SYN] tentativa {tentativa}/{MAX_TENTATIVAS} -> {nome_arquivo} ({quantidade_chunks} chunks)')
         socket_cliente.sendto(syn, endereco_servidor)
         try:
             mensagem_bruta, _ = socket_cliente.recvfrom(65507)
             resposta = desempacotar_mensagem(mensagem_bruta)
             if resposta and resposta.get('tipo') == 'SYN-ACK':
-                print(f'[SYN-ACK] Conexão estabelecida com {endereco_servidor[0]}:{endereco_servidor[1]}')
+                print('[SYN] SYN-ACK recebido')
                 return True
         except socket.timeout:
-            print('[SYN] Timeout — retransmitindo...')
+            pass
 
     print('[ERRO] Handshake falhou após todas as tentativas.')
     return False
@@ -100,11 +100,13 @@ def enviar_stop_and_wait(socket_cliente: socket.socket, endereco_servidor: tuple
     total = len(chunks)
     seq_num = 0  # alinhado ao servidor atual, que espera seq iniciando em 0
 
+    print(f'[DATA] iniciando envio SAW com {total} chunks')
+
     for chunk in chunks:
         pacote = empacotar_mensagem({
             'tipo': 'DATA',
             'seq': seq_num,
-            'dado': chunk.hex(),
+            'dado': base64.b64encode(chunk).decode('ascii'),
             'checksum': calcular_checksum_md5(chunk),
             'ts': time.time(),
         })
@@ -119,12 +121,7 @@ def enviar_stop_and_wait(socket_cliente: socket.socket, endereco_servidor: tuple
                     f'{MAX_TENTATIVAS} tentativas — abortando.'
                 )
 
-            if tentativas == 0:
-                print(f'[SAW] Enviando chunk {seq_num}/{total-1} ({len(chunk)} B)...')
-            else:
-                print(f'[SAW] Retransmitindo chunk {seq_num} '
-                      f'(tentativa {tentativas + 1}/{MAX_TENTATIVAS})...')
-
+            print(f'[DATA] enviando seq={seq_num} tentativa={tentativas + 1}/{MAX_TENTATIVAS}')
             socket_cliente.sendto(pacote, endereco_servidor)
 
             try:
@@ -139,17 +136,16 @@ def enviar_stop_and_wait(socket_cliente: socket.socket, endereco_servidor: tuple
                 seq_resposta = resposta.get('seq')
 
                 if tipo_resposta == 'ACK' and seq_resposta == seq_num:
-                    print(f'[SAW] ACK {seq_num} recebido.')
+                    print(f'[ACK] seq={seq_num} confirmado')
                     confirmado = True
                 elif tipo_resposta == 'NAK' and seq_resposta == seq_num:
-                    print(f'[SAW] NAK {seq_num} — retransmitindo...')
+                    print(f'[NAK] seq={seq_num} recebido, retransmitindo')
                     tentativas += 1
                 else:
-                    print(f'[SAW] ACK/NAK inesperado (tipo={tipo_resposta}, seq={seq_resposta}) — ignora.')
                     tentativas += 1
 
             except socket.timeout:
-                print(f'[SAW] Timeout aguardando ACK {seq_num}.')
+                print(f'[TIMEOUT] seq={seq_num} sem resposta, retransmitindo')
                 tentativas += 1
 
         seq_num += 1
@@ -161,6 +157,7 @@ def aguardar_confirmacao_final(socket_cliente: socket.socket) -> dict | None:
             mensagem_bruta, _ = socket_cliente.recvfrom(65507)
             mensagem = desempacotar_mensagem(mensagem_bruta)
             if mensagem and mensagem.get('tipo') == 'FIN':
+                print(f'[FIN] recebido com status={mensagem.get("status")}')
                 return mensagem
         except socket.timeout:
             pass
