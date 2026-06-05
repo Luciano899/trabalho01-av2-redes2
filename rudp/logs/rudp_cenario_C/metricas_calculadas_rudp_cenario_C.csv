@@ -1,0 +1,2 @@
+arquivo_origem,total_execucoes,vazao_media_mbps,vazao_minima_mbps,vazao_maxima_mbps,desvio_padrao_mbps,tempo_minimo_s,tempo_maximo_s,tempo_medio_s,desvio_padrao_tempo_s,tempo_total_s
+rudp_cenario_C.csv,30,0.055739,0.053049,0.058609,0.001502,143.407794,158.438079,150.896881,4.086206,4526.906430

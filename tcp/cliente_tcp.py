@@ -11,7 +11,7 @@ nome = "Luciano Sousa Barbosa"
 
 auth = hashlib.sha256((matricula + nome).encode()).hexdigest()
 arquivo_entrada = "output/arquivo_envio_trabalhoRedes2.txt"
-CHUNK_SIZE = 900
+CHUNK_SIZE = 1100
 
 
 def enviar_com_cabeçalho(sock, seq, chunk):

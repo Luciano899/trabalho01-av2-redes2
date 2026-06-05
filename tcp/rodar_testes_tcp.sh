@@ -96,7 +96,7 @@ iniciar_tcpdump() {
 
 encerrar_tcpdump() {
     PID_TCPDUMP="$1"
-    docker exec $CLIENT_CONTAINER sh -c "kill ${PID_TCPDUMP} 2>/dev/null"
+    docker exec $CLIENT_CONTAINER sh -c "kill -INT ${PID_TCPDUMP} 2>/dev/null"
 }
 
 # =========================================================
@@ -190,6 +190,8 @@ do
 
     OUTPUT=$(docker exec $CLIENT_CONTAINER \
         python3 $CLIENT_SCRIPT)
+
+    sleep 2
 
     encerrar_tcpdump "$PID_TCPDUMP_EXEC"
 

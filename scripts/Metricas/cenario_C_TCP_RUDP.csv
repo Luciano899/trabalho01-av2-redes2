@@ -1,0 +1,10 @@
+﻿Cenário C — 10% perda / 100 ms;;
+Métrica;R-UDP;TCP
+Vazão média (Mbps);0,055739;0,411882
+Vazão mínima (Mbps);0,053049;0,291175
+Vazão máxima (Mbps);0,058609;1,408888
+Desvio padrão da vazão;0,001502;0,199647
+Tempo mínimo (s);143,407794;5,965691
+Tempo máximo (s);158,438079;28,865824
+Tempo médio (s);150,896881;22,320956
+Desvio padrão do tempo;4,086206;4,755141

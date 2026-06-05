@@ -1,14 +1,14 @@
 ============================================================
   R-UDP Cliente  |  Protocolo: Stop-and-Wait
   Arquivo        : arquivo_envio_trabalhoRedes2.txt  (1,050,624 bytes)
-  Chunks         : 1168 × 900 B
+  Chunks         : 956 × 1100 B
   SHA-256 global : 2a2d494c41ea26194c2ab0de...
   X-Custom-Auth  : 2473b463fac8f67c5b5b1738...
   Destino        : servidor:12345
 ============================================================
-[SYN] tentativa 1/10 -> arquivo_envio_trabalhoRedes2.txt (1168 chunks)
+[SYN] tentativa 1/10 -> arquivo_envio_trabalhoRedes2.txt (956 chunks)
 [SYN] SYN-ACK recebido
-[DATA] iniciando envio SAW com 1168 chunks
+[DATA] iniciando envio SAW com 956 chunks
 [DATA] enviando seq=0 tentativa=1/10
 [ACK] seq=0 confirmado
 [DATA] enviando seq=1 tentativa=1/10
@@ -54,20 +54,20 @@
 [DATA] enviando seq=21 tentativa=1/10
 [ACK] seq=21 confirmado
 [DATA] enviando seq=22 tentativa=1/10
+[TIMEOUT] seq=22 sem resposta, retransmitindo
+[DATA] enviando seq=22 tentativa=2/10
 [ACK] seq=22 confirmado
 [DATA] enviando seq=23 tentativa=1/10
 [ACK] seq=23 confirmado
 [DATA] enviando seq=24 tentativa=1/10
+[TIMEOUT] seq=24 sem resposta, retransmitindo
+[DATA] enviando seq=24 tentativa=2/10
 [ACK] seq=24 confirmado
 [DATA] enviando seq=25 tentativa=1/10
-[TIMEOUT] seq=25 sem resposta, retransmitindo
-[DATA] enviando seq=25 tentativa=2/10
 [ACK] seq=25 confirmado
 [DATA] enviando seq=26 tentativa=1/10
 [ACK] seq=26 confirmado
 [DATA] enviando seq=27 tentativa=1/10
-[TIMEOUT] seq=27 sem resposta, retransmitindo
-[DATA] enviando seq=27 tentativa=2/10
 [ACK] seq=27 confirmado
 [DATA] enviando seq=28 tentativa=1/10
 [ACK] seq=28 confirmado
@@ -80,6 +80,8 @@
 [DATA] enviando seq=32 tentativa=1/10
 [ACK] seq=32 confirmado
 [DATA] enviando seq=33 tentativa=1/10
+[TIMEOUT] seq=33 sem resposta, retransmitindo
+[DATA] enviando seq=33 tentativa=2/10
 [ACK] seq=33 confirmado
 [DATA] enviando seq=34 tentativa=1/10
 [ACK] seq=34 confirmado
@@ -88,8 +90,6 @@
 [DATA] enviando seq=36 tentativa=1/10
 [ACK] seq=36 confirmado
 [DATA] enviando seq=37 tentativa=1/10
-[TIMEOUT] seq=37 sem resposta, retransmitindo
-[DATA] enviando seq=37 tentativa=2/10
 [ACK] seq=37 confirmado
 [DATA] enviando seq=38 tentativa=1/10
 [ACK] seq=38 confirmado
@@ -100,14 +100,12 @@
 [DATA] enviando seq=41 tentativa=1/10
 [ACK] seq=41 confirmado
 [DATA] enviando seq=42 tentativa=1/10
-[TIMEOUT] seq=42 sem resposta, retransmitindo
-[DATA] enviando seq=42 tentativa=2/10
 [ACK] seq=42 confirmado
 [DATA] enviando seq=43 tentativa=1/10
-[TIMEOUT] seq=43 sem resposta, retransmitindo
-[DATA] enviando seq=43 tentativa=2/10
 [ACK] seq=43 confirmado
 [DATA] enviando seq=44 tentativa=1/10
+[TIMEOUT] seq=44 sem resposta, retransmitindo
+[DATA] enviando seq=44 tentativa=2/10
 [ACK] seq=44 confirmado
 [DATA] enviando seq=45 tentativa=1/10
 [ACK] seq=45 confirmado
@@ -120,20 +118,8 @@
 [DATA] enviando seq=49 tentativa=1/10
 [ACK] seq=49 confirmado
 [DATA] enviando seq=50 tentativa=1/10
-[TIMEOUT] seq=50 sem resposta, retransmitindo
-[DATA] enviando seq=50 tentativa=2/10
-[TIMEOUT] seq=50 sem resposta, retransmitindo
-[DATA] enviando seq=50 tentativa=3/10
-[TIMEOUT] seq=50 sem resposta, retransmitindo
-[DATA] enviando seq=50 tentativa=4/10
-[TIMEOUT] seq=50 sem resposta, retransmitindo
-[DATA] enviando seq=50 tentativa=5/10
-[TIMEOUT] seq=50 sem resposta, retransmitindo
-[DATA] enviando seq=50 tentativa=6/10
 [ACK] seq=50 confirmado
 [DATA] enviando seq=51 tentativa=1/10
-[TIMEOUT] seq=51 sem resposta, retransmitindo
-[DATA] enviando seq=51 tentativa=2/10
 [ACK] seq=51 confirmado
 [DATA] enviando seq=52 tentativa=1/10
 [ACK] seq=52 confirmado
@@ -146,8 +132,6 @@
 [DATA] enviando seq=56 tentativa=1/10
 [ACK] seq=56 confirmado
 [DATA] enviando seq=57 tentativa=1/10
-[TIMEOUT] seq=57 sem resposta, retransmitindo
-[DATA] enviando seq=57 tentativa=2/10
 [ACK] seq=57 confirmado
 [DATA] enviando seq=58 tentativa=1/10
 [ACK] seq=58 confirmado
@@ -156,8 +140,6 @@
 [DATA] enviando seq=60 tentativa=1/10
 [ACK] seq=60 confirmado
 [DATA] enviando seq=61 tentativa=1/10
-[TIMEOUT] seq=61 sem resposta, retransmitindo
-[DATA] enviando seq=61 tentativa=2/10
 [ACK] seq=61 confirmado
 [DATA] enviando seq=62 tentativa=1/10
 [ACK] seq=62 confirmado
@@ -174,12 +156,12 @@
 [DATA] enviando seq=68 tentativa=1/10
 [ACK] seq=68 confirmado
 [DATA] enviando seq=69 tentativa=1/10
+[TIMEOUT] seq=69 sem resposta, retransmitindo
+[DATA] enviando seq=69 tentativa=2/10
 [ACK] seq=69 confirmado
 [DATA] enviando seq=70 tentativa=1/10
 [ACK] seq=70 confirmado
 [DATA] enviando seq=71 tentativa=1/10
-[TIMEOUT] seq=71 sem resposta, retransmitindo
-[DATA] enviando seq=71 tentativa=2/10
 [ACK] seq=71 confirmado
 [DATA] enviando seq=72 tentativa=1/10
 [ACK] seq=72 confirmado
@@ -190,6 +172,8 @@
 [DATA] enviando seq=75 tentativa=1/10
 [ACK] seq=75 confirmado
 [DATA] enviando seq=76 tentativa=1/10
+[TIMEOUT] seq=76 sem resposta, retransmitindo
+[DATA] enviando seq=76 tentativa=2/10
 [ACK] seq=76 confirmado
 [DATA] enviando seq=77 tentativa=1/10
 [ACK] seq=77 confirmado
@@ -204,8 +188,6 @@
 [DATA] enviando seq=82 tentativa=1/10
 [ACK] seq=82 confirmado
 [DATA] enviando seq=83 tentativa=1/10
-[TIMEOUT] seq=83 sem resposta, retransmitindo
-[DATA] enviando seq=83 tentativa=2/10
 [ACK] seq=83 confirmado
 [DATA] enviando seq=84 tentativa=1/10
 [ACK] seq=84 confirmado
@@ -214,8 +196,6 @@
 [DATA] enviando seq=86 tentativa=1/10
 [ACK] seq=86 confirmado
 [DATA] enviando seq=87 tentativa=1/10
-[TIMEOUT] seq=87 sem resposta, retransmitindo
-[DATA] enviando seq=87 tentativa=2/10
 [ACK] seq=87 confirmado
 [DATA] enviando seq=88 tentativa=1/10
 [ACK] seq=88 confirmado
@@ -224,16 +204,22 @@
 [DATA] enviando seq=90 tentativa=1/10
 [ACK] seq=90 confirmado
 [DATA] enviando seq=91 tentativa=1/10
+[TIMEOUT] seq=91 sem resposta, retransmitindo
+[DATA] enviando seq=91 tentativa=2/10
 [ACK] seq=91 confirmado
 [DATA] enviando seq=92 tentativa=1/10
 [ACK] seq=92 confirmado
 [DATA] enviando seq=93 tentativa=1/10
+[TIMEOUT] seq=93 sem resposta, retransmitindo
+[DATA] enviando seq=93 tentativa=2/10
 [ACK] seq=93 confirmado
 [DATA] enviando seq=94 tentativa=1/10
 [ACK] seq=94 confirmado
 [DATA] enviando seq=95 tentativa=1/10
 [ACK] seq=95 confirmado
 [DATA] enviando seq=96 tentativa=1/10
+[TIMEOUT] seq=96 sem resposta, retransmitindo
+[DATA] enviando seq=96 tentativa=2/10
 [ACK] seq=96 confirmado
 [DATA] enviando seq=97 tentativa=1/10
 [ACK] seq=97 confirmado
@@ -254,14 +240,14 @@
 [DATA] enviando seq=105 tentativa=1/10
 [ACK] seq=105 confirmado
 [DATA] enviando seq=106 tentativa=1/10
-[TIMEOUT] seq=106 sem resposta, retransmitindo
-[DATA] enviando seq=106 tentativa=2/10
 [ACK] seq=106 confirmado
 [DATA] enviando seq=107 tentativa=1/10
 [ACK] seq=107 confirmado
 [DATA] enviando seq=108 tentativa=1/10
 [TIMEOUT] seq=108 sem resposta, retransmitindo
 [DATA] enviando seq=108 tentativa=2/10
+[TIMEOUT] seq=108 sem resposta, retransmitindo
+[DATA] enviando seq=108 tentativa=3/10
 [ACK] seq=108 confirmado
 [DATA] enviando seq=109 tentativa=1/10
 [ACK] seq=109 confirmado
@@ -282,8 +268,6 @@
 [DATA] enviando seq=117 tentativa=1/10
 [ACK] seq=117 confirmado
 [DATA] enviando seq=118 tentativa=1/10
-[TIMEOUT] seq=118 sem resposta, retransmitindo
-[DATA] enviando seq=118 tentativa=2/10
 [ACK] seq=118 confirmado
 [DATA] enviando seq=119 tentativa=1/10
 [TIMEOUT] seq=119 sem resposta, retransmitindo
@@ -318,6 +302,8 @@
 [DATA] enviando seq=133 tentativa=1/10
 [ACK] seq=133 confirmado
 [DATA] enviando seq=134 tentativa=1/10
+[TIMEOUT] seq=134 sem resposta, retransmitindo
+[DATA] enviando seq=134 tentativa=2/10
 [ACK] seq=134 confirmado
 [DATA] enviando seq=135 tentativa=1/10
 [ACK] seq=135 confirmado
@@ -332,18 +318,16 @@
 [DATA] enviando seq=140 tentativa=1/10
 [ACK] seq=140 confirmado
 [DATA] enviando seq=141 tentativa=1/10
-[TIMEOUT] seq=141 sem resposta, retransmitindo
-[DATA] enviando seq=141 tentativa=2/10
 [ACK] seq=141 confirmado
 [DATA] enviando seq=142 tentativa=1/10
 [ACK] seq=142 confirmado
 [DATA] enviando seq=143 tentativa=1/10
+[TIMEOUT] seq=143 sem resposta, retransmitindo
+[DATA] enviando seq=143 tentativa=2/10
 [ACK] seq=143 confirmado
 [DATA] enviando seq=144 tentativa=1/10
 [ACK] seq=144 confirmado
 [DATA] enviando seq=145 tentativa=1/10
-[TIMEOUT] seq=145 sem resposta, retransmitindo
-[DATA] enviando seq=145 tentativa=2/10
 [ACK] seq=145 confirmado
 [DATA] enviando seq=146 tentativa=1/10
 [ACK] seq=146 confirmado
@@ -352,8 +336,6 @@
 [DATA] enviando seq=148 tentativa=1/10
 [ACK] seq=148 confirmado
 [DATA] enviando seq=149 tentativa=1/10
-[TIMEOUT] seq=149 sem resposta, retransmitindo
-[DATA] enviando seq=149 tentativa=2/10
 [ACK] seq=149 confirmado
 [DATA] enviando seq=150 tentativa=1/10
 [ACK] seq=150 confirmado
@@ -374,18 +356,16 @@
 [DATA] enviando seq=158 tentativa=1/10
 [ACK] seq=158 confirmado
 [DATA] enviando seq=159 tentativa=1/10
+[TIMEOUT] seq=159 sem resposta, retransmitindo
+[DATA] enviando seq=159 tentativa=2/10
 [ACK] seq=159 confirmado
 [DATA] enviando seq=160 tentativa=1/10
 [ACK] seq=160 confirmado
 [DATA] enviando seq=161 tentativa=1/10
-[TIMEOUT] seq=161 sem resposta, retransmitindo
-[DATA] enviando seq=161 tentativa=2/10
 [ACK] seq=161 confirmado
 [DATA] enviando seq=162 tentativa=1/10
 [ACK] seq=162 confirmado
 [DATA] enviando seq=163 tentativa=1/10
-[TIMEOUT] seq=163 sem resposta, retransmitindo
-[DATA] enviando seq=163 tentativa=2/10
 [ACK] seq=163 confirmado
 [DATA] enviando seq=164 tentativa=1/10
 [ACK] seq=164 confirmado
@@ -394,8 +374,6 @@
 [DATA] enviando seq=166 tentativa=1/10
 [ACK] seq=166 confirmado
 [DATA] enviando seq=167 tentativa=1/10
-[TIMEOUT] seq=167 sem resposta, retransmitindo
-[DATA] enviando seq=167 tentativa=2/10
 [ACK] seq=167 confirmado
 [DATA] enviando seq=168 tentativa=1/10
 [ACK] seq=168 confirmado
@@ -406,8 +384,6 @@
 [DATA] enviando seq=171 tentativa=1/10
 [ACK] seq=171 confirmado
 [DATA] enviando seq=172 tentativa=1/10
-[TIMEOUT] seq=172 sem resposta, retransmitindo
-[DATA] enviando seq=172 tentativa=2/10
 [ACK] seq=172 confirmado
 [DATA] enviando seq=173 tentativa=1/10
 [ACK] seq=173 confirmado
@@ -432,28 +408,26 @@
 [DATA] enviando seq=183 tentativa=1/10
 [ACK] seq=183 confirmado
 [DATA] enviando seq=184 tentativa=1/10
-[TIMEOUT] seq=184 sem resposta, retransmitindo
-[DATA] enviando seq=184 tentativa=2/10
 [ACK] seq=184 confirmado
 [DATA] enviando seq=185 tentativa=1/10
+[TIMEOUT] seq=185 sem resposta, retransmitindo
+[DATA] enviando seq=185 tentativa=2/10
 [ACK] seq=185 confirmado
 [DATA] enviando seq=186 tentativa=1/10
 [ACK] seq=186 confirmado
 [DATA] enviando seq=187 tentativa=1/10
-[TIMEOUT] seq=187 sem resposta, retransmitindo
-[DATA] enviando seq=187 tentativa=2/10
 [ACK] seq=187 confirmado
 [DATA] enviando seq=188 tentativa=1/10
 [ACK] seq=188 confirmado
 [DATA] enviando seq=189 tentativa=1/10
-[TIMEOUT] seq=189 sem resposta, retransmitindo
-[DATA] enviando seq=189 tentativa=2/10
 [ACK] seq=189 confirmado
 [DATA] enviando seq=190 tentativa=1/10
 [ACK] seq=190 confirmado
 [DATA] enviando seq=191 tentativa=1/10
 [ACK] seq=191 confirmado
 [DATA] enviando seq=192 tentativa=1/10
+[TIMEOUT] seq=192 sem resposta, retransmitindo
+[DATA] enviando seq=192 tentativa=2/10
 [ACK] seq=192 confirmado
 [DATA] enviando seq=193 tentativa=1/10
 [ACK] seq=193 confirmado
@@ -476,8 +450,6 @@
 [DATA] enviando seq=202 tentativa=1/10
 [ACK] seq=202 confirmado
 [DATA] enviando seq=203 tentativa=1/10
-[TIMEOUT] seq=203 sem resposta, retransmitindo
-[DATA] enviando seq=203 tentativa=2/10
 [ACK] seq=203 confirmado
 [DATA] enviando seq=204 tentativa=1/10
 [ACK] seq=204 confirmado
@@ -504,18 +476,16 @@
 [DATA] enviando seq=215 tentativa=1/10
 [ACK] seq=215 confirmado
 [DATA] enviando seq=216 tentativa=1/10
-[TIMEOUT] seq=216 sem resposta, retransmitindo
-[DATA] enviando seq=216 tentativa=2/10
 [ACK] seq=216 confirmado
 [DATA] enviando seq=217 tentativa=1/10
 [ACK] seq=217 confirmado
 [DATA] enviando seq=218 tentativa=1/10
 [ACK] seq=218 confirmado
 [DATA] enviando seq=219 tentativa=1/10
+[TIMEOUT] seq=219 sem resposta, retransmitindo
+[DATA] enviando seq=219 tentativa=2/10
 [ACK] seq=219 confirmado
 [DATA] enviando seq=220 tentativa=1/10
-[TIMEOUT] seq=220 sem resposta, retransmitindo
-[DATA] enviando seq=220 tentativa=2/10
 [ACK] seq=220 confirmado
 [DATA] enviando seq=221 tentativa=1/10
 [ACK] seq=221 confirmado
@@ -530,6 +500,8 @@
 [DATA] enviando seq=226 tentativa=1/10
 [ACK] seq=226 confirmado
 [DATA] enviando seq=227 tentativa=1/10
+[TIMEOUT] seq=227 sem resposta, retransmitindo
+[DATA] enviando seq=227 tentativa=2/10
 [ACK] seq=227 confirmado
 [DATA] enviando seq=228 tentativa=1/10
 [ACK] seq=228 confirmado
@@ -548,8 +520,6 @@
 [DATA] enviando seq=235 tentativa=1/10
 [ACK] seq=235 confirmado
 [DATA] enviando seq=236 tentativa=1/10
-[TIMEOUT] seq=236 sem resposta, retransmitindo
-[DATA] enviando seq=236 tentativa=2/10
 [ACK] seq=236 confirmado
 [DATA] enviando seq=237 tentativa=1/10
 [ACK] seq=237 confirmado
@@ -560,6 +530,8 @@
 [DATA] enviando seq=240 tentativa=1/10
 [ACK] seq=240 confirmado
 [DATA] enviando seq=241 tentativa=1/10
+[TIMEOUT] seq=241 sem resposta, retransmitindo
+[DATA] enviando seq=241 tentativa=2/10
 [ACK] seq=241 confirmado
 [DATA] enviando seq=242 tentativa=1/10
 [ACK] seq=242 confirmado
@@ -578,32 +550,28 @@
 [DATA] enviando seq=249 tentativa=1/10
 [ACK] seq=249 confirmado
 [DATA] enviando seq=250 tentativa=1/10
-[TIMEOUT] seq=250 sem resposta, retransmitindo
-[DATA] enviando seq=250 tentativa=2/10
 [ACK] seq=250 confirmado
 [DATA] enviando seq=251 tentativa=1/10
 [ACK] seq=251 confirmado
 [DATA] enviando seq=252 tentativa=1/10
-[TIMEOUT] seq=252 sem resposta, retransmitindo
-[DATA] enviando seq=252 tentativa=2/10
 [ACK] seq=252 confirmado
 [DATA] enviando seq=253 tentativa=1/10
 [ACK] seq=253 confirmado
 [DATA] enviando seq=254 tentativa=1/10
-[TIMEOUT] seq=254 sem resposta, retransmitindo
-[DATA] enviando seq=254 tentativa=2/10
 [ACK] seq=254 confirmado
 [DATA] enviando seq=255 tentativa=1/10
 [ACK] seq=255 confirmado
 [DATA] enviando seq=256 tentativa=1/10
-[TIMEOUT] seq=256 sem resposta, retransmitindo
-[DATA] enviando seq=256 tentativa=2/10
 [ACK] seq=256 confirmado
 [DATA] enviando seq=257 tentativa=1/10
 [ACK] seq=257 confirmado
 [DATA] enviando seq=258 tentativa=1/10
+[TIMEOUT] seq=258 sem resposta, retransmitindo
+[DATA] enviando seq=258 tentativa=2/10
 [ACK] seq=258 confirmado
 [DATA] enviando seq=259 tentativa=1/10
+[TIMEOUT] seq=259 sem resposta, retransmitindo
+[DATA] enviando seq=259 tentativa=2/10
 [ACK] seq=259 confirmado
 [DATA] enviando seq=260 tentativa=1/10
 [ACK] seq=260 confirmado
@@ -634,6 +602,8 @@
 [DATA] enviando seq=273 tentativa=1/10
 [ACK] seq=273 confirmado
 [DATA] enviando seq=274 tentativa=1/10
+[TIMEOUT] seq=274 sem resposta, retransmitindo
+[DATA] enviando seq=274 tentativa=2/10
 [ACK] seq=274 confirmado
 [DATA] enviando seq=275 tentativa=1/10
 [ACK] seq=275 confirmado
@@ -646,8 +616,12 @@
 [DATA] enviando seq=279 tentativa=1/10
 [ACK] seq=279 confirmado
 [DATA] enviando seq=280 tentativa=1/10
+[TIMEOUT] seq=280 sem resposta, retransmitindo
+[DATA] enviando seq=280 tentativa=2/10
 [ACK] seq=280 confirmado
 [DATA] enviando seq=281 tentativa=1/10
+[TIMEOUT] seq=281 sem resposta, retransmitindo
+[DATA] enviando seq=281 tentativa=2/10
 [ACK] seq=281 confirmado
 [DATA] enviando seq=282 tentativa=1/10
 [ACK] seq=282 confirmado
@@ -656,10 +630,10 @@
 [DATA] enviando seq=284 tentativa=1/10
 [ACK] seq=284 confirmado
 [DATA] enviando seq=285 tentativa=1/10
-[TIMEOUT] seq=285 sem resposta, retransmitindo
-[DATA] enviando seq=285 tentativa=2/10
 [ACK] seq=285 confirmado
 [DATA] enviando seq=286 tentativa=1/10
+[TIMEOUT] seq=286 sem resposta, retransmitindo
+[DATA] enviando seq=286 tentativa=2/10
 [ACK] seq=286 confirmado
 [DATA] enviando seq=287 tentativa=1/10
 [ACK] seq=287 confirmado
@@ -678,8 +652,6 @@
 [DATA] enviando seq=293 tentativa=2/10
 [ACK] seq=293 confirmado
 [DATA] enviando seq=294 tentativa=1/10
-[TIMEOUT] seq=294 sem resposta, retransmitindo
-[DATA] enviando seq=294 tentativa=2/10
 [ACK] seq=294 confirmado
 [DATA] enviando seq=295 tentativa=1/10
 [ACK] seq=295 confirmado
@@ -708,14 +680,10 @@
 [DATA] enviando seq=307 tentativa=1/10
 [ACK] seq=307 confirmado
 [DATA] enviando seq=308 tentativa=1/10
-[TIMEOUT] seq=308 sem resposta, retransmitindo
-[DATA] enviando seq=308 tentativa=2/10
 [ACK] seq=308 confirmado
 [DATA] enviando seq=309 tentativa=1/10
 [ACK] seq=309 confirmado
 [DATA] enviando seq=310 tentativa=1/10
-[TIMEOUT] seq=310 sem resposta, retransmitindo
-[DATA] enviando seq=310 tentativa=2/10
 [ACK] seq=310 confirmado
 [DATA] enviando seq=311 tentativa=1/10
 [ACK] seq=311 confirmado
@@ -726,8 +694,6 @@
 [DATA] enviando seq=314 tentativa=1/10
 [ACK] seq=314 confirmado
 [DATA] enviando seq=315 tentativa=1/10
-[TIMEOUT] seq=315 sem resposta, retransmitindo
-[DATA] enviando seq=315 tentativa=2/10
 [ACK] seq=315 confirmado
 [DATA] enviando seq=316 tentativa=1/10
 [ACK] seq=316 confirmado
@@ -752,6 +718,8 @@
 [DATA] enviando seq=326 tentativa=1/10
 [ACK] seq=326 confirmado
 [DATA] enviando seq=327 tentativa=1/10
+[TIMEOUT] seq=327 sem resposta, retransmitindo
+[DATA] enviando seq=327 tentativa=2/10
 [ACK] seq=327 confirmado
 [DATA] enviando seq=328 tentativa=1/10
 [ACK] seq=328 confirmado
@@ -786,8 +754,6 @@
 [DATA] enviando seq=343 tentativa=1/10
 [ACK] seq=343 confirmado
 [DATA] enviando seq=344 tentativa=1/10
-[TIMEOUT] seq=344 sem resposta, retransmitindo
-[DATA] enviando seq=344 tentativa=2/10
 [ACK] seq=344 confirmado
 [DATA] enviando seq=345 tentativa=1/10
 [ACK] seq=345 confirmado
@@ -812,12 +778,12 @@
 [DATA] enviando seq=355 tentativa=1/10
 [ACK] seq=355 confirmado
 [DATA] enviando seq=356 tentativa=1/10
+[TIMEOUT] seq=356 sem resposta, retransmitindo
+[DATA] enviando seq=356 tentativa=2/10
 [ACK] seq=356 confirmado
 [DATA] enviando seq=357 tentativa=1/10
 [ACK] seq=357 confirmado
 [DATA] enviando seq=358 tentativa=1/10
-[TIMEOUT] seq=358 sem resposta, retransmitindo
-[DATA] enviando seq=358 tentativa=2/10
 [ACK] seq=358 confirmado
 [DATA] enviando seq=359 tentativa=1/10
 [ACK] seq=359 confirmado
@@ -826,12 +792,8 @@
 [DATA] enviando seq=361 tentativa=1/10
 [ACK] seq=361 confirmado
 [DATA] enviando seq=362 tentativa=1/10
-[TIMEOUT] seq=362 sem resposta, retransmitindo
-[DATA] enviando seq=362 tentativa=2/10
 [ACK] seq=362 confirmado
 [DATA] enviando seq=363 tentativa=1/10
-[TIMEOUT] seq=363 sem resposta, retransmitindo
-[DATA] enviando seq=363 tentativa=2/10
 [ACK] seq=363 confirmado
 [DATA] enviando seq=364 tentativa=1/10
 [ACK] seq=364 confirmado
@@ -860,22 +822,20 @@
 [DATA] enviando seq=376 tentativa=1/10
 [ACK] seq=376 confirmado
 [DATA] enviando seq=377 tentativa=1/10
-[TIMEOUT] seq=377 sem resposta, retransmitindo
-[DATA] enviando seq=377 tentativa=2/10
 [ACK] seq=377 confirmado
 [DATA] enviando seq=378 tentativa=1/10
 [ACK] seq=378 confirmado
 [DATA] enviando seq=379 tentativa=1/10
 [ACK] seq=379 confirmado
 [DATA] enviando seq=380 tentativa=1/10
-[TIMEOUT] seq=380 sem resposta, retransmitindo
-[DATA] enviando seq=380 tentativa=2/10
 [ACK] seq=380 confirmado
 [DATA] enviando seq=381 tentativa=1/10
 [ACK] seq=381 confirmado
 [DATA] enviando seq=382 tentativa=1/10
 [ACK] seq=382 confirmado
 [DATA] enviando seq=383 tentativa=1/10
+[TIMEOUT] seq=383 sem resposta, retransmitindo
+[DATA] enviando seq=383 tentativa=2/10
 [ACK] seq=383 confirmado
 [DATA] enviando seq=384 tentativa=1/10
 [ACK] seq=384 confirmado
@@ -900,8 +860,6 @@
 [DATA] enviando seq=394 tentativa=1/10
 [ACK] seq=394 confirmado
 [DATA] enviando seq=395 tentativa=1/10
-[TIMEOUT] seq=395 sem resposta, retransmitindo
-[DATA] enviando seq=395 tentativa=2/10
 [ACK] seq=395 confirmado
 [DATA] enviando seq=396 tentativa=1/10
 [ACK] seq=396 confirmado
@@ -914,8 +872,6 @@
 [DATA] enviando seq=400 tentativa=1/10
 [ACK] seq=400 confirmado
 [DATA] enviando seq=401 tentativa=1/10
-[TIMEOUT] seq=401 sem resposta, retransmitindo
-[DATA] enviando seq=401 tentativa=2/10
 [ACK] seq=401 confirmado
 [DATA] enviando seq=402 tentativa=1/10
 [ACK] seq=402 confirmado
@@ -930,10 +886,12 @@
 [DATA] enviando seq=407 tentativa=1/10
 [ACK] seq=407 confirmado
 [DATA] enviando seq=408 tentativa=1/10
+[TIMEOUT] seq=408 sem resposta, retransmitindo
+[DATA] enviando seq=408 tentativa=2/10
+[TIMEOUT] seq=408 sem resposta, retransmitindo
+[DATA] enviando seq=408 tentativa=3/10
 [ACK] seq=408 confirmado
 [DATA] enviando seq=409 tentativa=1/10
-[TIMEOUT] seq=409 sem resposta, retransmitindo
-[DATA] enviando seq=409 tentativa=2/10
 [ACK] seq=409 confirmado
 [DATA] enviando seq=410 tentativa=1/10
 [ACK] seq=410 confirmado
@@ -942,6 +900,8 @@
 [DATA] enviando seq=412 tentativa=1/10
 [ACK] seq=412 confirmado
 [DATA] enviando seq=413 tentativa=1/10
+[TIMEOUT] seq=413 sem resposta, retransmitindo
+[DATA] enviando seq=413 tentativa=2/10
 [ACK] seq=413 confirmado
 [DATA] enviando seq=414 tentativa=1/10
 [ACK] seq=414 confirmado
@@ -968,6 +928,8 @@
 [DATA] enviando seq=425 tentativa=1/10
 [ACK] seq=425 confirmado
 [DATA] enviando seq=426 tentativa=1/10
+[TIMEOUT] seq=426 sem resposta, retransmitindo
+[DATA] enviando seq=426 tentativa=2/10
 [ACK] seq=426 confirmado
 [DATA] enviando seq=427 tentativa=1/10
 [ACK] seq=427 confirmado
@@ -982,10 +944,6 @@
 [DATA] enviando seq=432 tentativa=1/10
 [ACK] seq=432 confirmado
 [DATA] enviando seq=433 tentativa=1/10
-[TIMEOUT] seq=433 sem resposta, retransmitindo
-[DATA] enviando seq=433 tentativa=2/10
-[TIMEOUT] seq=433 sem resposta, retransmitindo
-[DATA] enviando seq=433 tentativa=3/10
 [ACK] seq=433 confirmado
 [DATA] enviando seq=434 tentativa=1/10
 [ACK] seq=434 confirmado
@@ -1010,8 +968,12 @@
 [DATA] enviando seq=444 tentativa=1/10
 [ACK] seq=444 confirmado
 [DATA] enviando seq=445 tentativa=1/10
+[TIMEOUT] seq=445 sem resposta, retransmitindo
+[DATA] enviando seq=445 tentativa=2/10
 [ACK] seq=445 confirmado
 [DATA] enviando seq=446 tentativa=1/10
+[TIMEOUT] seq=446 sem resposta, retransmitindo
+[DATA] enviando seq=446 tentativa=2/10
 [ACK] seq=446 confirmado
 [DATA] enviando seq=447 tentativa=1/10
 [ACK] seq=447 confirmado
@@ -1022,10 +984,6 @@
 [DATA] enviando seq=450 tentativa=1/10
 [ACK] seq=450 confirmado
 [DATA] enviando seq=451 tentativa=1/10
-[TIMEOUT] seq=451 sem resposta, retransmitindo
-[DATA] enviando seq=451 tentativa=2/10
-[TIMEOUT] seq=451 sem resposta, retransmitindo
-[DATA] enviando seq=451 tentativa=3/10
 [ACK] seq=451 confirmado
 [DATA] enviando seq=452 tentativa=1/10
 [ACK] seq=452 confirmado
@@ -1048,6 +1006,8 @@
 [DATA] enviando seq=461 tentativa=1/10
 [ACK] seq=461 confirmado
 [DATA] enviando seq=462 tentativa=1/10
+[TIMEOUT] seq=462 sem resposta, retransmitindo
+[DATA] enviando seq=462 tentativa=2/10
 [ACK] seq=462 confirmado
 [DATA] enviando seq=463 tentativa=1/10
 [ACK] seq=463 confirmado
@@ -1060,16 +1020,18 @@
 [DATA] enviando seq=467 tentativa=1/10
 [TIMEOUT] seq=467 sem resposta, retransmitindo
 [DATA] enviando seq=467 tentativa=2/10
+[TIMEOUT] seq=467 sem resposta, retransmitindo
+[DATA] enviando seq=467 tentativa=3/10
 [ACK] seq=467 confirmado
 [DATA] enviando seq=468 tentativa=1/10
 [ACK] seq=468 confirmado
 [DATA] enviando seq=469 tentativa=1/10
 [ACK] seq=469 confirmado
 [DATA] enviando seq=470 tentativa=1/10
-[TIMEOUT] seq=470 sem resposta, retransmitindo
-[DATA] enviando seq=470 tentativa=2/10
 [ACK] seq=470 confirmado
 [DATA] enviando seq=471 tentativa=1/10
+[TIMEOUT] seq=471 sem resposta, retransmitindo
+[DATA] enviando seq=471 tentativa=2/10
 [ACK] seq=471 confirmado
 [DATA] enviando seq=472 tentativa=1/10
 [ACK] seq=472 confirmado
@@ -1086,14 +1048,14 @@
 [DATA] enviando seq=478 tentativa=1/10
 [ACK] seq=478 confirmado
 [DATA] enviando seq=479 tentativa=1/10
-[TIMEOUT] seq=479 sem resposta, retransmitindo
-[DATA] enviando seq=479 tentativa=2/10
 [ACK] seq=479 confirmado
 [DATA] enviando seq=480 tentativa=1/10
 [ACK] seq=480 confirmado
 [DATA] enviando seq=481 tentativa=1/10
 [ACK] seq=481 confirmado
 [DATA] enviando seq=482 tentativa=1/10
+[TIMEOUT] seq=482 sem resposta, retransmitindo
+[DATA] enviando seq=482 tentativa=2/10
 [ACK] seq=482 confirmado
 [DATA] enviando seq=483 tentativa=1/10
 [ACK] seq=483 confirmado
@@ -1102,12 +1064,8 @@
 [DATA] enviando seq=485 tentativa=1/10
 [ACK] seq=485 confirmado
 [DATA] enviando seq=486 tentativa=1/10
-[TIMEOUT] seq=486 sem resposta, retransmitindo
-[DATA] enviando seq=486 tentativa=2/10
 [ACK] seq=486 confirmado
 [DATA] enviando seq=487 tentativa=1/10
-[TIMEOUT] seq=487 sem resposta, retransmitindo
-[DATA] enviando seq=487 tentativa=2/10
 [ACK] seq=487 confirmado
 [DATA] enviando seq=488 tentativa=1/10
 [ACK] seq=488 confirmado
@@ -1132,12 +1090,12 @@
 [DATA] enviando seq=498 tentativa=1/10
 [ACK] seq=498 confirmado
 [DATA] enviando seq=499 tentativa=1/10
-[TIMEOUT] seq=499 sem resposta, retransmitindo
-[DATA] enviando seq=499 tentativa=2/10
 [ACK] seq=499 confirmado
 [DATA] enviando seq=500 tentativa=1/10
 [ACK] seq=500 confirmado
 [DATA] enviando seq=501 tentativa=1/10
+[TIMEOUT] seq=501 sem resposta, retransmitindo
+[DATA] enviando seq=501 tentativa=2/10
 [ACK] seq=501 confirmado
 [DATA] enviando seq=502 tentativa=1/10
 [ACK] seq=502 confirmado
@@ -1148,8 +1106,12 @@
 [DATA] enviando seq=505 tentativa=1/10
 [ACK] seq=505 confirmado
 [DATA] enviando seq=506 tentativa=1/10
+[TIMEOUT] seq=506 sem resposta, retransmitindo
+[DATA] enviando seq=506 tentativa=2/10
 [ACK] seq=506 confirmado
 [DATA] enviando seq=507 tentativa=1/10
+[TIMEOUT] seq=507 sem resposta, retransmitindo
+[DATA] enviando seq=507 tentativa=2/10
 [ACK] seq=507 confirmado
 [DATA] enviando seq=508 tentativa=1/10
 [ACK] seq=508 confirmado
@@ -1158,6 +1120,8 @@
 [DATA] enviando seq=510 tentativa=1/10
 [ACK] seq=510 confirmado
 [DATA] enviando seq=511 tentativa=1/10
+[TIMEOUT] seq=511 sem resposta, retransmitindo
+[DATA] enviando seq=511 tentativa=2/10
 [ACK] seq=511 confirmado
 [DATA] enviando seq=512 tentativa=1/10
 [ACK] seq=512 confirmado
@@ -1168,6 +1132,8 @@
 [DATA] enviando seq=515 tentativa=1/10
 [ACK] seq=515 confirmado
 [DATA] enviando seq=516 tentativa=1/10
+[TIMEOUT] seq=516 sem resposta, retransmitindo
+[DATA] enviando seq=516 tentativa=2/10
 [ACK] seq=516 confirmado
 [DATA] enviando seq=517 tentativa=1/10
 [ACK] seq=517 confirmado
@@ -1200,8 +1166,6 @@
 [DATA] enviando seq=531 tentativa=1/10
 [ACK] seq=531 confirmado
 [DATA] enviando seq=532 tentativa=1/10
-[TIMEOUT] seq=532 sem resposta, retransmitindo
-[DATA] enviando seq=532 tentativa=2/10
 [ACK] seq=532 confirmado
 [DATA] enviando seq=533 tentativa=1/10
 [ACK] seq=533 confirmado
@@ -1220,14 +1184,10 @@
 [DATA] enviando seq=540 tentativa=1/10
 [ACK] seq=540 confirmado
 [DATA] enviando seq=541 tentativa=1/10
-[TIMEOUT] seq=541 sem resposta, retransmitindo
-[DATA] enviando seq=541 tentativa=2/10
 [ACK] seq=541 confirmado
 [DATA] enviando seq=542 tentativa=1/10
 [ACK] seq=542 confirmado
 [DATA] enviando seq=543 tentativa=1/10
-[TIMEOUT] seq=543 sem resposta, retransmitindo
-[DATA] enviando seq=543 tentativa=2/10
 [ACK] seq=543 confirmado
 [DATA] enviando seq=544 tentativa=1/10
 [ACK] seq=544 confirmado
@@ -1236,16 +1196,18 @@
 [DATA] enviando seq=546 tentativa=1/10
 [ACK] seq=546 confirmado
 [DATA] enviando seq=547 tentativa=1/10
+[TIMEOUT] seq=547 sem resposta, retransmitindo
+[DATA] enviando seq=547 tentativa=2/10
 [ACK] seq=547 confirmado
 [DATA] enviando seq=548 tentativa=1/10
 [ACK] seq=548 confirmado
 [DATA] enviando seq=549 tentativa=1/10
 [ACK] seq=549 confirmado
 [DATA] enviando seq=550 tentativa=1/10
-[TIMEOUT] seq=550 sem resposta, retransmitindo
-[DATA] enviando seq=550 tentativa=2/10
 [ACK] seq=550 confirmado
 [DATA] enviando seq=551 tentativa=1/10
+[TIMEOUT] seq=551 sem resposta, retransmitindo
+[DATA] enviando seq=551 tentativa=2/10
 [ACK] seq=551 confirmado
 [DATA] enviando seq=552 tentativa=1/10
 [ACK] seq=552 confirmado
@@ -1256,8 +1218,6 @@
 [DATA] enviando seq=555 tentativa=1/10
 [ACK] seq=555 confirmado
 [DATA] enviando seq=556 tentativa=1/10
-[TIMEOUT] seq=556 sem resposta, retransmitindo
-[DATA] enviando seq=556 tentativa=2/10
 [ACK] seq=556 confirmado
 [DATA] enviando seq=557 tentativa=1/10
 [ACK] seq=557 confirmado
@@ -1266,14 +1226,12 @@
 [DATA] enviando seq=559 tentativa=1/10
 [ACK] seq=559 confirmado
 [DATA] enviando seq=560 tentativa=1/10
-[TIMEOUT] seq=560 sem resposta, retransmitindo
-[DATA] enviando seq=560 tentativa=2/10
 [ACK] seq=560 confirmado
 [DATA] enviando seq=561 tentativa=1/10
+[TIMEOUT] seq=561 sem resposta, retransmitindo
+[DATA] enviando seq=561 tentativa=2/10
 [ACK] seq=561 confirmado
 [DATA] enviando seq=562 tentativa=1/10
-[TIMEOUT] seq=562 sem resposta, retransmitindo
-[DATA] enviando seq=562 tentativa=2/10
 [ACK] seq=562 confirmado
 [DATA] enviando seq=563 tentativa=1/10
 [ACK] seq=563 confirmado
@@ -1284,8 +1242,6 @@
 [DATA] enviando seq=566 tentativa=1/10
 [ACK] seq=566 confirmado
 [DATA] enviando seq=567 tentativa=1/10
-[TIMEOUT] seq=567 sem resposta, retransmitindo
-[DATA] enviando seq=567 tentativa=2/10
 [ACK] seq=567 confirmado
 [DATA] enviando seq=568 tentativa=1/10
 [ACK] seq=568 confirmado
@@ -1300,8 +1256,6 @@
 [DATA] enviando seq=573 tentativa=1/10
 [ACK] seq=573 confirmado
 [DATA] enviando seq=574 tentativa=1/10
-[TIMEOUT] seq=574 sem resposta, retransmitindo
-[DATA] enviando seq=574 tentativa=2/10
 [ACK] seq=574 confirmado
 [DATA] enviando seq=575 tentativa=1/10
 [ACK] seq=575 confirmado
@@ -1310,14 +1264,10 @@
 [DATA] enviando seq=577 tentativa=1/10
 [ACK] seq=577 confirmado
 [DATA] enviando seq=578 tentativa=1/10
-[TIMEOUT] seq=578 sem resposta, retransmitindo
-[DATA] enviando seq=578 tentativa=2/10
 [ACK] seq=578 confirmado
 [DATA] enviando seq=579 tentativa=1/10
 [ACK] seq=579 confirmado
 [DATA] enviando seq=580 tentativa=1/10
-[TIMEOUT] seq=580 sem resposta, retransmitindo
-[DATA] enviando seq=580 tentativa=2/10
 [ACK] seq=580 confirmado
 [DATA] enviando seq=581 tentativa=1/10
 [ACK] seq=581 confirmado
@@ -1326,8 +1276,6 @@
 [DATA] enviando seq=583 tentativa=1/10
 [ACK] seq=583 confirmado
 [DATA] enviando seq=584 tentativa=1/10
-[TIMEOUT] seq=584 sem resposta, retransmitindo
-[DATA] enviando seq=584 tentativa=2/10
 [ACK] seq=584 confirmado
 [DATA] enviando seq=585 tentativa=1/10
 [ACK] seq=585 confirmado
@@ -1350,28 +1298,34 @@
 [DATA] enviando seq=594 tentativa=1/10
 [ACK] seq=594 confirmado
 [DATA] enviando seq=595 tentativa=1/10
+[TIMEOUT] seq=595 sem resposta, retransmitindo
+[DATA] enviando seq=595 tentativa=2/10
 [ACK] seq=595 confirmado
 [DATA] enviando seq=596 tentativa=1/10
 [ACK] seq=596 confirmado
 [DATA] enviando seq=597 tentativa=1/10
 [ACK] seq=597 confirmado
 [DATA] enviando seq=598 tentativa=1/10
+[TIMEOUT] seq=598 sem resposta, retransmitindo
+[DATA] enviando seq=598 tentativa=2/10
 [ACK] seq=598 confirmado
 [DATA] enviando seq=599 tentativa=1/10
 [ACK] seq=599 confirmado
 [DATA] enviando seq=600 tentativa=1/10
 [ACK] seq=600 confirmado
 [DATA] enviando seq=601 tentativa=1/10
+[TIMEOUT] seq=601 sem resposta, retransmitindo
+[DATA] enviando seq=601 tentativa=2/10
 [ACK] seq=601 confirmado
 [DATA] enviando seq=602 tentativa=1/10
 [ACK] seq=602 confirmado
 [DATA] enviando seq=603 tentativa=1/10
-[TIMEOUT] seq=603 sem resposta, retransmitindo
-[DATA] enviando seq=603 tentativa=2/10
 [ACK] seq=603 confirmado
 [DATA] enviando seq=604 tentativa=1/10
 [ACK] seq=604 confirmado
 [DATA] enviando seq=605 tentativa=1/10
+[TIMEOUT] seq=605 sem resposta, retransmitindo
+[DATA] enviando seq=605 tentativa=2/10
 [ACK] seq=605 confirmado
 [DATA] enviando seq=606 tentativa=1/10
 [ACK] seq=606 confirmado
@@ -1384,8 +1338,12 @@
 [DATA] enviando seq=610 tentativa=1/10
 [ACK] seq=610 confirmado
 [DATA] enviando seq=611 tentativa=1/10
+[TIMEOUT] seq=611 sem resposta, retransmitindo
+[DATA] enviando seq=611 tentativa=2/10
 [ACK] seq=611 confirmado
 [DATA] enviando seq=612 tentativa=1/10
+[TIMEOUT] seq=612 sem resposta, retransmitindo
+[DATA] enviando seq=612 tentativa=2/10
 [ACK] seq=612 confirmado
 [DATA] enviando seq=613 tentativa=1/10
 [ACK] seq=613 confirmado
@@ -1412,6 +1370,8 @@
 [DATA] enviando seq=624 tentativa=1/10
 [ACK] seq=624 confirmado
 [DATA] enviando seq=625 tentativa=1/10
+[TIMEOUT] seq=625 sem resposta, retransmitindo
+[DATA] enviando seq=625 tentativa=2/10
 [ACK] seq=625 confirmado
 [DATA] enviando seq=626 tentativa=1/10
 [ACK] seq=626 confirmado
@@ -1420,34 +1380,44 @@
 [DATA] enviando seq=628 tentativa=1/10
 [ACK] seq=628 confirmado
 [DATA] enviando seq=629 tentativa=1/10
+[TIMEOUT] seq=629 sem resposta, retransmitindo
+[DATA] enviando seq=629 tentativa=2/10
 [ACK] seq=629 confirmado
 [DATA] enviando seq=630 tentativa=1/10
 [ACK] seq=630 confirmado
 [DATA] enviando seq=631 tentativa=1/10
 [ACK] seq=631 confirmado
 [DATA] enviando seq=632 tentativa=1/10
-[TIMEOUT] seq=632 sem resposta, retransmitindo
-[DATA] enviando seq=632 tentativa=2/10
 [ACK] seq=632 confirmado
 [DATA] enviando seq=633 tentativa=1/10
+[TIMEOUT] seq=633 sem resposta, retransmitindo
+[DATA] enviando seq=633 tentativa=2/10
 [ACK] seq=633 confirmado
 [DATA] enviando seq=634 tentativa=1/10
 [ACK] seq=634 confirmado
 [DATA] enviando seq=635 tentativa=1/10
 [ACK] seq=635 confirmado
 [DATA] enviando seq=636 tentativa=1/10
+[TIMEOUT] seq=636 sem resposta, retransmitindo
+[DATA] enviando seq=636 tentativa=2/10
 [ACK] seq=636 confirmado
 [DATA] enviando seq=637 tentativa=1/10
+[TIMEOUT] seq=637 sem resposta, retransmitindo
+[DATA] enviando seq=637 tentativa=2/10
 [ACK] seq=637 confirmado
 [DATA] enviando seq=638 tentativa=1/10
 [ACK] seq=638 confirmado
 [DATA] enviando seq=639 tentativa=1/10
+[TIMEOUT] seq=639 sem resposta, retransmitindo
+[DATA] enviando seq=639 tentativa=2/10
 [ACK] seq=639 confirmado
 [DATA] enviando seq=640 tentativa=1/10
 [ACK] seq=640 confirmado
 [DATA] enviando seq=641 tentativa=1/10
 [ACK] seq=641 confirmado
 [DATA] enviando seq=642 tentativa=1/10
+[TIMEOUT] seq=642 sem resposta, retransmitindo
+[DATA] enviando seq=642 tentativa=2/10
 [ACK] seq=642 confirmado
 [DATA] enviando seq=643 tentativa=1/10
 [ACK] seq=643 confirmado
@@ -1472,14 +1442,10 @@
 [DATA] enviando seq=653 tentativa=1/10
 [ACK] seq=653 confirmado
 [DATA] enviando seq=654 tentativa=1/10
-[TIMEOUT] seq=654 sem resposta, retransmitindo
-[DATA] enviando seq=654 tentativa=2/10
 [ACK] seq=654 confirmado
 [DATA] enviando seq=655 tentativa=1/10
 [ACK] seq=655 confirmado
 [DATA] enviando seq=656 tentativa=1/10
-[TIMEOUT] seq=656 sem resposta, retransmitindo
-[DATA] enviando seq=656 tentativa=2/10
 [ACK] seq=656 confirmado
 [DATA] enviando seq=657 tentativa=1/10
 [ACK] seq=657 confirmado
@@ -1494,6 +1460,8 @@
 [DATA] enviando seq=662 tentativa=1/10
 [ACK] seq=662 confirmado
 [DATA] enviando seq=663 tentativa=1/10
+[TIMEOUT] seq=663 sem resposta, retransmitindo
+[DATA] enviando seq=663 tentativa=2/10
 [ACK] seq=663 confirmado
 [DATA] enviando seq=664 tentativa=1/10
 [ACK] seq=664 confirmado
@@ -1502,6 +1470,10 @@
 [DATA] enviando seq=666 tentativa=1/10
 [ACK] seq=666 confirmado
 [DATA] enviando seq=667 tentativa=1/10
+[TIMEOUT] seq=667 sem resposta, retransmitindo
+[DATA] enviando seq=667 tentativa=2/10
+[TIMEOUT] seq=667 sem resposta, retransmitindo
+[DATA] enviando seq=667 tentativa=3/10
 [ACK] seq=667 confirmado
 [DATA] enviando seq=668 tentativa=1/10
 [ACK] seq=668 confirmado
@@ -1514,6 +1486,8 @@
 [DATA] enviando seq=672 tentativa=1/10
 [ACK] seq=672 confirmado
 [DATA] enviando seq=673 tentativa=1/10
+[TIMEOUT] seq=673 sem resposta, retransmitindo
+[DATA] enviando seq=673 tentativa=2/10
 [ACK] seq=673 confirmado
 [DATA] enviando seq=674 tentativa=1/10
 [ACK] seq=674 confirmado
@@ -1530,6 +1504,8 @@
 [DATA] enviando seq=680 tentativa=1/10
 [ACK] seq=680 confirmado
 [DATA] enviando seq=681 tentativa=1/10
+[TIMEOUT] seq=681 sem resposta, retransmitindo
+[DATA] enviando seq=681 tentativa=2/10
 [ACK] seq=681 confirmado
 [DATA] enviando seq=682 tentativa=1/10
 [ACK] seq=682 confirmado
@@ -1552,12 +1528,12 @@
 [DATA] enviando seq=691 tentativa=1/10
 [ACK] seq=691 confirmado
 [DATA] enviando seq=692 tentativa=1/10
+[TIMEOUT] seq=692 sem resposta, retransmitindo
+[DATA] enviando seq=692 tentativa=2/10
 [ACK] seq=692 confirmado
 [DATA] enviando seq=693 tentativa=1/10
 [ACK] seq=693 confirmado
 [DATA] enviando seq=694 tentativa=1/10
-[TIMEOUT] seq=694 sem resposta, retransmitindo
-[DATA] enviando seq=694 tentativa=2/10
 [ACK] seq=694 confirmado
 [DATA] enviando seq=695 tentativa=1/10
 [ACK] seq=695 confirmado
@@ -1570,8 +1546,6 @@
 [DATA] enviando seq=699 tentativa=1/10
 [ACK] seq=699 confirmado
 [DATA] enviando seq=700 tentativa=1/10
-[TIMEOUT] seq=700 sem resposta, retransmitindo
-[DATA] enviando seq=700 tentativa=2/10
 [ACK] seq=700 confirmado
 [DATA] enviando seq=701 tentativa=1/10
 [ACK] seq=701 confirmado
@@ -1584,20 +1558,20 @@
 [DATA] enviando seq=705 tentativa=1/10
 [ACK] seq=705 confirmado
 [DATA] enviando seq=706 tentativa=1/10
+[TIMEOUT] seq=706 sem resposta, retransmitindo
+[DATA] enviando seq=706 tentativa=2/10
 [ACK] seq=706 confirmado
 [DATA] enviando seq=707 tentativa=1/10
 [ACK] seq=707 confirmado
 [DATA] enviando seq=708 tentativa=1/10
-[TIMEOUT] seq=708 sem resposta, retransmitindo
-[DATA] enviando seq=708 tentativa=2/10
 [ACK] seq=708 confirmado
 [DATA] enviando seq=709 tentativa=1/10
 [ACK] seq=709 confirmado
 [DATA] enviando seq=710 tentativa=1/10
-[TIMEOUT] seq=710 sem resposta, retransmitindo
-[DATA] enviando seq=710 tentativa=2/10
 [ACK] seq=710 confirmado
 [DATA] enviando seq=711 tentativa=1/10
+[TIMEOUT] seq=711 sem resposta, retransmitindo
+[DATA] enviando seq=711 tentativa=2/10
 [ACK] seq=711 confirmado
 [DATA] enviando seq=712 tentativa=1/10
 [ACK] seq=712 confirmado
@@ -1606,6 +1580,8 @@
 [DATA] enviando seq=714 tentativa=1/10
 [ACK] seq=714 confirmado
 [DATA] enviando seq=715 tentativa=1/10
+[TIMEOUT] seq=715 sem resposta, retransmitindo
+[DATA] enviando seq=715 tentativa=2/10
 [ACK] seq=715 confirmado
 [DATA] enviando seq=716 tentativa=1/10
 [ACK] seq=716 confirmado
@@ -1626,20 +1602,18 @@
 [DATA] enviando seq=724 tentativa=1/10
 [ACK] seq=724 confirmado
 [DATA] enviando seq=725 tentativa=1/10
+[TIMEOUT] seq=725 sem resposta, retransmitindo
+[DATA] enviando seq=725 tentativa=2/10
 [ACK] seq=725 confirmado
 [DATA] enviando seq=726 tentativa=1/10
 [ACK] seq=726 confirmado
 [DATA] enviando seq=727 tentativa=1/10
-[TIMEOUT] seq=727 sem resposta, retransmitindo
-[DATA] enviando seq=727 tentativa=2/10
 [ACK] seq=727 confirmado
 [DATA] enviando seq=728 tentativa=1/10
 [ACK] seq=728 confirmado
 [DATA] enviando seq=729 tentativa=1/10
 [ACK] seq=729 confirmado
 [DATA] enviando seq=730 tentativa=1/10
-[TIMEOUT] seq=730 sem resposta, retransmitindo
-[DATA] enviando seq=730 tentativa=2/10
 [ACK] seq=730 confirmado
 [DATA] enviando seq=731 tentativa=1/10
 [ACK] seq=731 confirmado
@@ -1652,14 +1626,14 @@
 [DATA] enviando seq=735 tentativa=1/10
 [ACK] seq=735 confirmado
 [DATA] enviando seq=736 tentativa=1/10
+[TIMEOUT] seq=736 sem resposta, retransmitindo
+[DATA] enviando seq=736 tentativa=2/10
 [ACK] seq=736 confirmado
 [DATA] enviando seq=737 tentativa=1/10
 [ACK] seq=737 confirmado
 [DATA] enviando seq=738 tentativa=1/10
 [ACK] seq=738 confirmado
 [DATA] enviando seq=739 tentativa=1/10
-[TIMEOUT] seq=739 sem resposta, retransmitindo
-[DATA] enviando seq=739 tentativa=2/10
 [ACK] seq=739 confirmado
 [DATA] enviando seq=740 tentativa=1/10
 [ACK] seq=740 confirmado
@@ -1668,6 +1642,8 @@
 [DATA] enviando seq=742 tentativa=1/10
 [ACK] seq=742 confirmado
 [DATA] enviando seq=743 tentativa=1/10
+[TIMEOUT] seq=743 sem resposta, retransmitindo
+[DATA] enviando seq=743 tentativa=2/10
 [ACK] seq=743 confirmado
 [DATA] enviando seq=744 tentativa=1/10
 [ACK] seq=744 confirmado
@@ -1676,18 +1652,16 @@
 [DATA] enviando seq=746 tentativa=1/10
 [ACK] seq=746 confirmado
 [DATA] enviando seq=747 tentativa=1/10
-[TIMEOUT] seq=747 sem resposta, retransmitindo
-[DATA] enviando seq=747 tentativa=2/10
 [ACK] seq=747 confirmado
 [DATA] enviando seq=748 tentativa=1/10
+[TIMEOUT] seq=748 sem resposta, retransmitindo
+[DATA] enviando seq=748 tentativa=2/10
 [ACK] seq=748 confirmado
 [DATA] enviando seq=749 tentativa=1/10
 [ACK] seq=749 confirmado
 [DATA] enviando seq=750 tentativa=1/10
 [ACK] seq=750 confirmado
 [DATA] enviando seq=751 tentativa=1/10
-[TIMEOUT] seq=751 sem resposta, retransmitindo
-[DATA] enviando seq=751 tentativa=2/10
 [ACK] seq=751 confirmado
 [DATA] enviando seq=752 tentativa=1/10
 [ACK] seq=752 confirmado
@@ -1696,24 +1670,20 @@
 [DATA] enviando seq=754 tentativa=1/10
 [ACK] seq=754 confirmado
 [DATA] enviando seq=755 tentativa=1/10
-[TIMEOUT] seq=755 sem resposta, retransmitindo
-[DATA] enviando seq=755 tentativa=2/10
 [ACK] seq=755 confirmado
 [DATA] enviando seq=756 tentativa=1/10
 [ACK] seq=756 confirmado
 [DATA] enviando seq=757 tentativa=1/10
+[TIMEOUT] seq=757 sem resposta, retransmitindo
+[DATA] enviando seq=757 tentativa=2/10
 [ACK] seq=757 confirmado
 [DATA] enviando seq=758 tentativa=1/10
 [ACK] seq=758 confirmado
 [DATA] enviando seq=759 tentativa=1/10
-[TIMEOUT] seq=759 sem resposta, retransmitindo
-[DATA] enviando seq=759 tentativa=2/10
 [ACK] seq=759 confirmado
 [DATA] enviando seq=760 tentativa=1/10
 [ACK] seq=760 confirmado
 [DATA] enviando seq=761 tentativa=1/10
-[TIMEOUT] seq=761 sem resposta, retransmitindo
-[DATA] enviando seq=761 tentativa=2/10
 [ACK] seq=761 confirmado
 [DATA] enviando seq=762 tentativa=1/10
 [ACK] seq=762 confirmado
@@ -1722,10 +1692,6 @@
 [DATA] enviando seq=764 tentativa=1/10
 [ACK] seq=764 confirmado
 [DATA] enviando seq=765 tentativa=1/10
-[TIMEOUT] seq=765 sem resposta, retransmitindo
-[DATA] enviando seq=765 tentativa=2/10
-[TIMEOUT] seq=765 sem resposta, retransmitindo
-[DATA] enviando seq=765 tentativa=3/10
 [ACK] seq=765 confirmado
 [DATA] enviando seq=766 tentativa=1/10
 [ACK] seq=766 confirmado
@@ -1748,6 +1714,8 @@
 [DATA] enviando seq=775 tentativa=1/10
 [ACK] seq=775 confirmado
 [DATA] enviando seq=776 tentativa=1/10
+[TIMEOUT] seq=776 sem resposta, retransmitindo
+[DATA] enviando seq=776 tentativa=2/10
 [ACK] seq=776 confirmado
 [DATA] enviando seq=777 tentativa=1/10
 [ACK] seq=777 confirmado
@@ -1758,12 +1726,6 @@
 [DATA] enviando seq=780 tentativa=1/10
 [ACK] seq=780 confirmado
 [DATA] enviando seq=781 tentativa=1/10
-[TIMEOUT] seq=781 sem resposta, retransmitindo
-[DATA] enviando seq=781 tentativa=2/10
-[TIMEOUT] seq=781 sem resposta, retransmitindo
-[DATA] enviando seq=781 tentativa=3/10
-[TIMEOUT] seq=781 sem resposta, retransmitindo
-[DATA] enviando seq=781 tentativa=4/10
 [ACK] seq=781 confirmado
 [DATA] enviando seq=782 tentativa=1/10
 [ACK] seq=782 confirmado
@@ -1776,22 +1738,16 @@
 [DATA] enviando seq=786 tentativa=1/10
 [ACK] seq=786 confirmado
 [DATA] enviando seq=787 tentativa=1/10
-[TIMEOUT] seq=787 sem resposta, retransmitindo
-[DATA] enviando seq=787 tentativa=2/10
 [ACK] seq=787 confirmado
 [DATA] enviando seq=788 tentativa=1/10
+[TIMEOUT] seq=788 sem resposta, retransmitindo
+[DATA] enviando seq=788 tentativa=2/10
 [ACK] seq=788 confirmado
 [DATA] enviando seq=789 tentativa=1/10
-[TIMEOUT] seq=789 sem resposta, retransmitindo
-[DATA] enviando seq=789 tentativa=2/10
-[TIMEOUT] seq=789 sem resposta, retransmitindo
-[DATA] enviando seq=789 tentativa=3/10
 [ACK] seq=789 confirmado
 [DATA] enviando seq=790 tentativa=1/10
 [ACK] seq=790 confirmado
 [DATA] enviando seq=791 tentativa=1/10
-[TIMEOUT] seq=791 sem resposta, retransmitindo
-[DATA] enviando seq=791 tentativa=2/10
 [ACK] seq=791 confirmado
 [DATA] enviando seq=792 tentativa=1/10
 [ACK] seq=792 confirmado
@@ -1802,10 +1758,10 @@
 [DATA] enviando seq=795 tentativa=1/10
 [ACK] seq=795 confirmado
 [DATA] enviando seq=796 tentativa=1/10
+[TIMEOUT] seq=796 sem resposta, retransmitindo
+[DATA] enviando seq=796 tentativa=2/10
 [ACK] seq=796 confirmado
 [DATA] enviando seq=797 tentativa=1/10
-[TIMEOUT] seq=797 sem resposta, retransmitindo
-[DATA] enviando seq=797 tentativa=2/10
 [ACK] seq=797 confirmado
 [DATA] enviando seq=798 tentativa=1/10
 [ACK] seq=798 confirmado
@@ -1818,40 +1774,42 @@
 [DATA] enviando seq=802 tentativa=1/10
 [ACK] seq=802 confirmado
 [DATA] enviando seq=803 tentativa=1/10
-[TIMEOUT] seq=803 sem resposta, retransmitindo
-[DATA] enviando seq=803 tentativa=2/10
 [ACK] seq=803 confirmado
 [DATA] enviando seq=804 tentativa=1/10
 [ACK] seq=804 confirmado
 [DATA] enviando seq=805 tentativa=1/10
+[TIMEOUT] seq=805 sem resposta, retransmitindo
+[DATA] enviando seq=805 tentativa=2/10
 [ACK] seq=805 confirmado
 [DATA] enviando seq=806 tentativa=1/10
+[TIMEOUT] seq=806 sem resposta, retransmitindo
+[DATA] enviando seq=806 tentativa=2/10
 [ACK] seq=806 confirmado
 [DATA] enviando seq=807 tentativa=1/10
 [ACK] seq=807 confirmado
 [DATA] enviando seq=808 tentativa=1/10
+[TIMEOUT] seq=808 sem resposta, retransmitindo
+[DATA] enviando seq=808 tentativa=2/10
 [ACK] seq=808 confirmado
 [DATA] enviando seq=809 tentativa=1/10
 [ACK] seq=809 confirmado
 [DATA] enviando seq=810 tentativa=1/10
 [ACK] seq=810 confirmado
 [DATA] enviando seq=811 tentativa=1/10
-[TIMEOUT] seq=811 sem resposta, retransmitindo
-[DATA] enviando seq=811 tentativa=2/10
 [ACK] seq=811 confirmado
 [DATA] enviando seq=812 tentativa=1/10
 [ACK] seq=812 confirmado
 [DATA] enviando seq=813 tentativa=1/10
 [ACK] seq=813 confirmado
 [DATA] enviando seq=814 tentativa=1/10
-[TIMEOUT] seq=814 sem resposta, retransmitindo
-[DATA] enviando seq=814 tentativa=2/10
 [ACK] seq=814 confirmado
 [DATA] enviando seq=815 tentativa=1/10
 [TIMEOUT] seq=815 sem resposta, retransmitindo
 [DATA] enviando seq=815 tentativa=2/10
 [ACK] seq=815 confirmado
 [DATA] enviando seq=816 tentativa=1/10
+[TIMEOUT] seq=816 sem resposta, retransmitindo
+[DATA] enviando seq=816 tentativa=2/10
 [ACK] seq=816 confirmado
 [DATA] enviando seq=817 tentativa=1/10
 [ACK] seq=817 confirmado
@@ -1876,12 +1834,14 @@
 [DATA] enviando seq=827 tentativa=1/10
 [ACK] seq=827 confirmado
 [DATA] enviando seq=828 tentativa=1/10
-[TIMEOUT] seq=828 sem resposta, retransmitindo
-[DATA] enviando seq=828 tentativa=2/10
 [ACK] seq=828 confirmado
 [DATA] enviando seq=829 tentativa=1/10
+[TIMEOUT] seq=829 sem resposta, retransmitindo
+[DATA] enviando seq=829 tentativa=2/10
 [ACK] seq=829 confirmado
 [DATA] enviando seq=830 tentativa=1/10
+[TIMEOUT] seq=830 sem resposta, retransmitindo
+[DATA] enviando seq=830 tentativa=2/10
 [ACK] seq=830 confirmado
 [DATA] enviando seq=831 tentativa=1/10
 [ACK] seq=831 confirmado
@@ -1906,8 +1866,6 @@
 [DATA] enviando seq=841 tentativa=1/10
 [ACK] seq=841 confirmado
 [DATA] enviando seq=842 tentativa=1/10
-[TIMEOUT] seq=842 sem resposta, retransmitindo
-[DATA] enviando seq=842 tentativa=2/10
 [ACK] seq=842 confirmado
 [DATA] enviando seq=843 tentativa=1/10
 [ACK] seq=843 confirmado
@@ -1916,8 +1874,6 @@
 [DATA] enviando seq=845 tentativa=1/10
 [ACK] seq=845 confirmado
 [DATA] enviando seq=846 tentativa=1/10
-[TIMEOUT] seq=846 sem resposta, retransmitindo
-[DATA] enviando seq=846 tentativa=2/10
 [ACK] seq=846 confirmado
 [DATA] enviando seq=847 tentativa=1/10
 [ACK] seq=847 confirmado
@@ -1934,8 +1890,6 @@
 [DATA] enviando seq=853 tentativa=1/10
 [ACK] seq=853 confirmado
 [DATA] enviando seq=854 tentativa=1/10
-[TIMEOUT] seq=854 sem resposta, retransmitindo
-[DATA] enviando seq=854 tentativa=2/10
 [ACK] seq=854 confirmado
 [DATA] enviando seq=855 tentativa=1/10
 [ACK] seq=855 confirmado
@@ -1948,6 +1902,10 @@
 [DATA] enviando seq=859 tentativa=1/10
 [ACK] seq=859 confirmado
 [DATA] enviando seq=860 tentativa=1/10
+[TIMEOUT] seq=860 sem resposta, retransmitindo
+[DATA] enviando seq=860 tentativa=2/10
+[TIMEOUT] seq=860 sem resposta, retransmitindo
+[DATA] enviando seq=860 tentativa=3/10
 [ACK] seq=860 confirmado
 [DATA] enviando seq=861 tentativa=1/10
 [ACK] seq=861 confirmado
@@ -1968,40 +1926,52 @@
 [DATA] enviando seq=869 tentativa=1/10
 [ACK] seq=869 confirmado
 [DATA] enviando seq=870 tentativa=1/10
+[TIMEOUT] seq=870 sem resposta, retransmitindo
+[DATA] enviando seq=870 tentativa=2/10
 [ACK] seq=870 confirmado
 [DATA] enviando seq=871 tentativa=1/10
+[TIMEOUT] seq=871 sem resposta, retransmitindo
+[DATA] enviando seq=871 tentativa=2/10
 [ACK] seq=871 confirmado
 [DATA] enviando seq=872 tentativa=1/10
 [ACK] seq=872 confirmado
 [DATA] enviando seq=873 tentativa=1/10
 [ACK] seq=873 confirmado
 [DATA] enviando seq=874 tentativa=1/10
+[TIMEOUT] seq=874 sem resposta, retransmitindo
+[DATA] enviando seq=874 tentativa=2/10
 [ACK] seq=874 confirmado
 [DATA] enviando seq=875 tentativa=1/10
 [ACK] seq=875 confirmado
 [DATA] enviando seq=876 tentativa=1/10
-[TIMEOUT] seq=876 sem resposta, retransmitindo
-[DATA] enviando seq=876 tentativa=2/10
 [ACK] seq=876 confirmado
 [DATA] enviando seq=877 tentativa=1/10
+[TIMEOUT] seq=877 sem resposta, retransmitindo
+[DATA] enviando seq=877 tentativa=2/10
 [ACK] seq=877 confirmado
 [DATA] enviando seq=878 tentativa=1/10
 [ACK] seq=878 confirmado
 [DATA] enviando seq=879 tentativa=1/10
 [ACK] seq=879 confirmado
 [DATA] enviando seq=880 tentativa=1/10
+[TIMEOUT] seq=880 sem resposta, retransmitindo
+[DATA] enviando seq=880 tentativa=2/10
 [ACK] seq=880 confirmado
 [DATA] enviando seq=881 tentativa=1/10
 [ACK] seq=881 confirmado
 [DATA] enviando seq=882 tentativa=1/10
-[TIMEOUT] seq=882 sem resposta, retransmitindo
-[DATA] enviando seq=882 tentativa=2/10
 [ACK] seq=882 confirmado
 [DATA] enviando seq=883 tentativa=1/10
+[TIMEOUT] seq=883 sem resposta, retransmitindo
+[DATA] enviando seq=883 tentativa=2/10
 [ACK] seq=883 confirmado
 [DATA] enviando seq=884 tentativa=1/10
+[TIMEOUT] seq=884 sem resposta, retransmitindo
+[DATA] enviando seq=884 tentativa=2/10
 [ACK] seq=884 confirmado
 [DATA] enviando seq=885 tentativa=1/10
+[TIMEOUT] seq=885 sem resposta, retransmitindo
+[DATA] enviando seq=885 tentativa=2/10
 [ACK] seq=885 confirmado
 [DATA] enviando seq=886 tentativa=1/10
 [ACK] seq=886 confirmado
@@ -2022,10 +1992,6 @@
 [DATA] enviando seq=894 tentativa=1/10
 [ACK] seq=894 confirmado
 [DATA] enviando seq=895 tentativa=1/10
-[TIMEOUT] seq=895 sem resposta, retransmitindo
-[DATA] enviando seq=895 tentativa=2/10
-[TIMEOUT] seq=895 sem resposta, retransmitindo
-[DATA] enviando seq=895 tentativa=3/10
 [ACK] seq=895 confirmado
 [DATA] enviando seq=896 tentativa=1/10
 [ACK] seq=896 confirmado
@@ -2040,8 +2006,6 @@
 [DATA] enviando seq=901 tentativa=1/10
 [ACK] seq=901 confirmado
 [DATA] enviando seq=902 tentativa=1/10
-[TIMEOUT] seq=902 sem resposta, retransmitindo
-[DATA] enviando seq=902 tentativa=2/10
 [ACK] seq=902 confirmado
 [DATA] enviando seq=903 tentativa=1/10
 [ACK] seq=903 confirmado
@@ -2060,8 +2024,6 @@
 [DATA] enviando seq=910 tentativa=1/10
 [ACK] seq=910 confirmado
 [DATA] enviando seq=911 tentativa=1/10
-[TIMEOUT] seq=911 sem resposta, retransmitindo
-[DATA] enviando seq=911 tentativa=2/10
 [ACK] seq=911 confirmado
 [DATA] enviando seq=912 tentativa=1/10
 [ACK] seq=912 confirmado
@@ -2098,28 +2060,26 @@
 [DATA] enviando seq=928 tentativa=1/10
 [ACK] seq=928 confirmado
 [DATA] enviando seq=929 tentativa=1/10
-[TIMEOUT] seq=929 sem resposta, retransmitindo
-[DATA] enviando seq=929 tentativa=2/10
 [ACK] seq=929 confirmado
 [DATA] enviando seq=930 tentativa=1/10
+[TIMEOUT] seq=930 sem resposta, retransmitindo
+[DATA] enviando seq=930 tentativa=2/10
 [ACK] seq=930 confirmado
 [DATA] enviando seq=931 tentativa=1/10
 [ACK] seq=931 confirmado
 [DATA] enviando seq=932 tentativa=1/10
 [ACK] seq=932 confirmado
 [DATA] enviando seq=933 tentativa=1/10
+[TIMEOUT] seq=933 sem resposta, retransmitindo
+[DATA] enviando seq=933 tentativa=2/10
 [ACK] seq=933 confirmado
 [DATA] enviando seq=934 tentativa=1/10
-[TIMEOUT] seq=934 sem resposta, retransmitindo
-[DATA] enviando seq=934 tentativa=2/10
 [ACK] seq=934 confirmado
 [DATA] enviando seq=935 tentativa=1/10
 [ACK] seq=935 confirmado
 [DATA] enviando seq=936 tentativa=1/10
 [ACK] seq=936 confirmado
 [DATA] enviando seq=937 tentativa=1/10
-[TIMEOUT] seq=937 sem resposta, retransmitindo
-[DATA] enviando seq=937 tentativa=2/10
 [ACK] seq=937 confirmado
 [DATA] enviando seq=938 tentativa=1/10
 [ACK] seq=938 confirmado
@@ -2142,12 +2102,6 @@
 [DATA] enviando seq=947 tentativa=1/10
 [ACK] seq=947 confirmado
 [DATA] enviando seq=948 tentativa=1/10
-[TIMEOUT] seq=948 sem resposta, retransmitindo
-[DATA] enviando seq=948 tentativa=2/10
-[TIMEOUT] seq=948 sem resposta, retransmitindo
-[DATA] enviando seq=948 tentativa=3/10
-[TIMEOUT] seq=948 sem resposta, retransmitindo
-[DATA] enviando seq=948 tentativa=4/10
 [ACK] seq=948 confirmado
 [DATA] enviando seq=949 tentativa=1/10
 [ACK] seq=949 confirmado
@@ -2158,502 +2112,18 @@
 [DATA] enviando seq=952 tentativa=1/10
 [ACK] seq=952 confirmado
 [DATA] enviando seq=953 tentativa=1/10
+[TIMEOUT] seq=953 sem resposta, retransmitindo
+[DATA] enviando seq=953 tentativa=2/10
+[TIMEOUT] seq=953 sem resposta, retransmitindo
+[DATA] enviando seq=953 tentativa=3/10
 [ACK] seq=953 confirmado
 [DATA] enviando seq=954 tentativa=1/10
-[TIMEOUT] seq=954 sem resposta, retransmitindo
-[DATA] enviando seq=954 tentativa=2/10
 [ACK] seq=954 confirmado
 [DATA] enviando seq=955 tentativa=1/10
 [ACK] seq=955 confirmado
-[DATA] enviando seq=956 tentativa=1/10
-[ACK] seq=956 confirmado
-[DATA] enviando seq=957 tentativa=1/10
-[TIMEOUT] seq=957 sem resposta, retransmitindo
-[DATA] enviando seq=957 tentativa=2/10
-[ACK] seq=957 confirmado
-[DATA] enviando seq=958 tentativa=1/10
-[ACK] seq=958 confirmado
-[DATA] enviando seq=959 tentativa=1/10
-[TIMEOUT] seq=959 sem resposta, retransmitindo
-[DATA] enviando seq=959 tentativa=2/10
-[ACK] seq=959 confirmado
-[DATA] enviando seq=960 tentativa=1/10
-[ACK] seq=960 confirmado
-[DATA] enviando seq=961 tentativa=1/10
-[ACK] seq=961 confirmado
-[DATA] enviando seq=962 tentativa=1/10
-[TIMEOUT] seq=962 sem resposta, retransmitindo
-[DATA] enviando seq=962 tentativa=2/10
-[ACK] seq=962 confirmado
-[DATA] enviando seq=963 tentativa=1/10
-[ACK] seq=963 confirmado
-[DATA] enviando seq=964 tentativa=1/10
-[ACK] seq=964 confirmado
-[DATA] enviando seq=965 tentativa=1/10
-[ACK] seq=965 confirmado
-[DATA] enviando seq=966 tentativa=1/10
-[ACK] seq=966 confirmado
-[DATA] enviando seq=967 tentativa=1/10
-[ACK] seq=967 confirmado
-[DATA] enviando seq=968 tentativa=1/10
-[ACK] seq=968 confirmado
-[DATA] enviando seq=969 tentativa=1/10
-[ACK] seq=969 confirmado
-[DATA] enviando seq=970 tentativa=1/10
-[ACK] seq=970 confirmado
-[DATA] enviando seq=971 tentativa=1/10
-[ACK] seq=971 confirmado
-[DATA] enviando seq=972 tentativa=1/10
-[ACK] seq=972 confirmado
-[DATA] enviando seq=973 tentativa=1/10
-[ACK] seq=973 confirmado
-[DATA] enviando seq=974 tentativa=1/10
-[ACK] seq=974 confirmado
-[DATA] enviando seq=975 tentativa=1/10
-[ACK] seq=975 confirmado
-[DATA] enviando seq=976 tentativa=1/10
-[ACK] seq=976 confirmado
-[DATA] enviando seq=977 tentativa=1/10
-[ACK] seq=977 confirmado
-[DATA] enviando seq=978 tentativa=1/10
-[TIMEOUT] seq=978 sem resposta, retransmitindo
-[DATA] enviando seq=978 tentativa=2/10
-[ACK] seq=978 confirmado
-[DATA] enviando seq=979 tentativa=1/10
-[ACK] seq=979 confirmado
-[DATA] enviando seq=980 tentativa=1/10
-[ACK] seq=980 confirmado
-[DATA] enviando seq=981 tentativa=1/10
-[ACK] seq=981 confirmado
-[DATA] enviando seq=982 tentativa=1/10
-[TIMEOUT] seq=982 sem resposta, retransmitindo
-[DATA] enviando seq=982 tentativa=2/10
-[ACK] seq=982 confirmado
-[DATA] enviando seq=983 tentativa=1/10
-[ACK] seq=983 confirmado
-[DATA] enviando seq=984 tentativa=1/10
-[ACK] seq=984 confirmado
-[DATA] enviando seq=985 tentativa=1/10
-[ACK] seq=985 confirmado
-[DATA] enviando seq=986 tentativa=1/10
-[TIMEOUT] seq=986 sem resposta, retransmitindo
-[DATA] enviando seq=986 tentativa=2/10
-[ACK] seq=986 confirmado
-[DATA] enviando seq=987 tentativa=1/10
-[ACK] seq=987 confirmado
-[DATA] enviando seq=988 tentativa=1/10
-[ACK] seq=988 confirmado
-[DATA] enviando seq=989 tentativa=1/10
-[ACK] seq=989 confirmado
-[DATA] enviando seq=990 tentativa=1/10
-[ACK] seq=990 confirmado
-[DATA] enviando seq=991 tentativa=1/10
-[ACK] seq=991 confirmado
-[DATA] enviando seq=992 tentativa=1/10
-[ACK] seq=992 confirmado
-[DATA] enviando seq=993 tentativa=1/10
-[ACK] seq=993 confirmado
-[DATA] enviando seq=994 tentativa=1/10
-[ACK] seq=994 confirmado
-[DATA] enviando seq=995 tentativa=1/10
-[ACK] seq=995 confirmado
-[DATA] enviando seq=996 tentativa=1/10
-[TIMEOUT] seq=996 sem resposta, retransmitindo
-[DATA] enviando seq=996 tentativa=2/10
-[ACK] seq=996 confirmado
-[DATA] enviando seq=997 tentativa=1/10
-[ACK] seq=997 confirmado
-[DATA] enviando seq=998 tentativa=1/10
-[ACK] seq=998 confirmado
-[DATA] enviando seq=999 tentativa=1/10
-[ACK] seq=999 confirmado
-[DATA] enviando seq=1000 tentativa=1/10
-[ACK] seq=1000 confirmado
-[DATA] enviando seq=1001 tentativa=1/10
-[ACK] seq=1001 confirmado
-[DATA] enviando seq=1002 tentativa=1/10
-[ACK] seq=1002 confirmado
-[DATA] enviando seq=1003 tentativa=1/10
-[ACK] seq=1003 confirmado
-[DATA] enviando seq=1004 tentativa=1/10
-[TIMEOUT] seq=1004 sem resposta, retransmitindo
-[DATA] enviando seq=1004 tentativa=2/10
-[ACK] seq=1004 confirmado
-[DATA] enviando seq=1005 tentativa=1/10
-[TIMEOUT] seq=1005 sem resposta, retransmitindo
-[DATA] enviando seq=1005 tentativa=2/10
-[TIMEOUT] seq=1005 sem resposta, retransmitindo
-[DATA] enviando seq=1005 tentativa=3/10
-[TIMEOUT] seq=1005 sem resposta, retransmitindo
-[DATA] enviando seq=1005 tentativa=4/10
-[ACK] seq=1005 confirmado
-[DATA] enviando seq=1006 tentativa=1/10
-[ACK] seq=1006 confirmado
-[DATA] enviando seq=1007 tentativa=1/10
-[TIMEOUT] seq=1007 sem resposta, retransmitindo
-[DATA] enviando seq=1007 tentativa=2/10
-[ACK] seq=1007 confirmado
-[DATA] enviando seq=1008 tentativa=1/10
-[TIMEOUT] seq=1008 sem resposta, retransmitindo
-[DATA] enviando seq=1008 tentativa=2/10
-[ACK] seq=1008 confirmado
-[DATA] enviando seq=1009 tentativa=1/10
-[ACK] seq=1009 confirmado
-[DATA] enviando seq=1010 tentativa=1/10
-[ACK] seq=1010 confirmado
-[DATA] enviando seq=1011 tentativa=1/10
-[ACK] seq=1011 confirmado
-[DATA] enviando seq=1012 tentativa=1/10
-[ACK] seq=1012 confirmado
-[DATA] enviando seq=1013 tentativa=1/10
-[ACK] seq=1013 confirmado
-[DATA] enviando seq=1014 tentativa=1/10
-[ACK] seq=1014 confirmado
-[DATA] enviando seq=1015 tentativa=1/10
-[ACK] seq=1015 confirmado
-[DATA] enviando seq=1016 tentativa=1/10
-[ACK] seq=1016 confirmado
-[DATA] enviando seq=1017 tentativa=1/10
-[ACK] seq=1017 confirmado
-[DATA] enviando seq=1018 tentativa=1/10
-[TIMEOUT] seq=1018 sem resposta, retransmitindo
-[DATA] enviando seq=1018 tentativa=2/10
-[ACK] seq=1018 confirmado
-[DATA] enviando seq=1019 tentativa=1/10
-[TIMEOUT] seq=1019 sem resposta, retransmitindo
-[DATA] enviando seq=1019 tentativa=2/10
-[ACK] seq=1019 confirmado
-[DATA] enviando seq=1020 tentativa=1/10
-[ACK] seq=1020 confirmado
-[DATA] enviando seq=1021 tentativa=1/10
-[ACK] seq=1021 confirmado
-[DATA] enviando seq=1022 tentativa=1/10
-[ACK] seq=1022 confirmado
-[DATA] enviando seq=1023 tentativa=1/10
-[ACK] seq=1023 confirmado
-[DATA] enviando seq=1024 tentativa=1/10
-[ACK] seq=1024 confirmado
-[DATA] enviando seq=1025 tentativa=1/10
-[ACK] seq=1025 confirmado
-[DATA] enviando seq=1026 tentativa=1/10
-[ACK] seq=1026 confirmado
-[DATA] enviando seq=1027 tentativa=1/10
-[ACK] seq=1027 confirmado
-[DATA] enviando seq=1028 tentativa=1/10
-[ACK] seq=1028 confirmado
-[DATA] enviando seq=1029 tentativa=1/10
-[ACK] seq=1029 confirmado
-[DATA] enviando seq=1030 tentativa=1/10
-[ACK] seq=1030 confirmado
-[DATA] enviando seq=1031 tentativa=1/10
-[ACK] seq=1031 confirmado
-[DATA] enviando seq=1032 tentativa=1/10
-[ACK] seq=1032 confirmado
-[DATA] enviando seq=1033 tentativa=1/10
-[ACK] seq=1033 confirmado
-[DATA] enviando seq=1034 tentativa=1/10
-[ACK] seq=1034 confirmado
-[DATA] enviando seq=1035 tentativa=1/10
-[ACK] seq=1035 confirmado
-[DATA] enviando seq=1036 tentativa=1/10
-[ACK] seq=1036 confirmado
-[DATA] enviando seq=1037 tentativa=1/10
-[ACK] seq=1037 confirmado
-[DATA] enviando seq=1038 tentativa=1/10
-[ACK] seq=1038 confirmado
-[DATA] enviando seq=1039 tentativa=1/10
-[ACK] seq=1039 confirmado
-[DATA] enviando seq=1040 tentativa=1/10
-[ACK] seq=1040 confirmado
-[DATA] enviando seq=1041 tentativa=1/10
-[ACK] seq=1041 confirmado
-[DATA] enviando seq=1042 tentativa=1/10
-[ACK] seq=1042 confirmado
-[DATA] enviando seq=1043 tentativa=1/10
-[ACK] seq=1043 confirmado
-[DATA] enviando seq=1044 tentativa=1/10
-[ACK] seq=1044 confirmado
-[DATA] enviando seq=1045 tentativa=1/10
-[ACK] seq=1045 confirmado
-[DATA] enviando seq=1046 tentativa=1/10
-[ACK] seq=1046 confirmado
-[DATA] enviando seq=1047 tentativa=1/10
-[ACK] seq=1047 confirmado
-[DATA] enviando seq=1048 tentativa=1/10
-[ACK] seq=1048 confirmado
-[DATA] enviando seq=1049 tentativa=1/10
-[TIMEOUT] seq=1049 sem resposta, retransmitindo
-[DATA] enviando seq=1049 tentativa=2/10
-[ACK] seq=1049 confirmado
-[DATA] enviando seq=1050 tentativa=1/10
-[ACK] seq=1050 confirmado
-[DATA] enviando seq=1051 tentativa=1/10
-[ACK] seq=1051 confirmado
-[DATA] enviando seq=1052 tentativa=1/10
-[ACK] seq=1052 confirmado
-[DATA] enviando seq=1053 tentativa=1/10
-[ACK] seq=1053 confirmado
-[DATA] enviando seq=1054 tentativa=1/10
-[ACK] seq=1054 confirmado
-[DATA] enviando seq=1055 tentativa=1/10
-[ACK] seq=1055 confirmado
-[DATA] enviando seq=1056 tentativa=1/10
-[ACK] seq=1056 confirmado
-[DATA] enviando seq=1057 tentativa=1/10
-[ACK] seq=1057 confirmado
-[DATA] enviando seq=1058 tentativa=1/10
-[ACK] seq=1058 confirmado
-[DATA] enviando seq=1059 tentativa=1/10
-[TIMEOUT] seq=1059 sem resposta, retransmitindo
-[DATA] enviando seq=1059 tentativa=2/10
-[ACK] seq=1059 confirmado
-[DATA] enviando seq=1060 tentativa=1/10
-[ACK] seq=1060 confirmado
-[DATA] enviando seq=1061 tentativa=1/10
-[ACK] seq=1061 confirmado
-[DATA] enviando seq=1062 tentativa=1/10
-[ACK] seq=1062 confirmado
-[DATA] enviando seq=1063 tentativa=1/10
-[ACK] seq=1063 confirmado
-[DATA] enviando seq=1064 tentativa=1/10
-[ACK] seq=1064 confirmado
-[DATA] enviando seq=1065 tentativa=1/10
-[ACK] seq=1065 confirmado
-[DATA] enviando seq=1066 tentativa=1/10
-[ACK] seq=1066 confirmado
-[DATA] enviando seq=1067 tentativa=1/10
-[ACK] seq=1067 confirmado
-[DATA] enviando seq=1068 tentativa=1/10
-[ACK] seq=1068 confirmado
-[DATA] enviando seq=1069 tentativa=1/10
-[ACK] seq=1069 confirmado
-[DATA] enviando seq=1070 tentativa=1/10
-[ACK] seq=1070 confirmado
-[DATA] enviando seq=1071 tentativa=1/10
-[ACK] seq=1071 confirmado
-[DATA] enviando seq=1072 tentativa=1/10
-[ACK] seq=1072 confirmado
-[DATA] enviando seq=1073 tentativa=1/10
-[ACK] seq=1073 confirmado
-[DATA] enviando seq=1074 tentativa=1/10
-[ACK] seq=1074 confirmado
-[DATA] enviando seq=1075 tentativa=1/10
-[ACK] seq=1075 confirmado
-[DATA] enviando seq=1076 tentativa=1/10
-[ACK] seq=1076 confirmado
-[DATA] enviando seq=1077 tentativa=1/10
-[ACK] seq=1077 confirmado
-[DATA] enviando seq=1078 tentativa=1/10
-[ACK] seq=1078 confirmado
-[DATA] enviando seq=1079 tentativa=1/10
-[ACK] seq=1079 confirmado
-[DATA] enviando seq=1080 tentativa=1/10
-[ACK] seq=1080 confirmado
-[DATA] enviando seq=1081 tentativa=1/10
-[ACK] seq=1081 confirmado
-[DATA] enviando seq=1082 tentativa=1/10
-[ACK] seq=1082 confirmado
-[DATA] enviando seq=1083 tentativa=1/10
-[ACK] seq=1083 confirmado
-[DATA] enviando seq=1084 tentativa=1/10
-[ACK] seq=1084 confirmado
-[DATA] enviando seq=1085 tentativa=1/10
-[ACK] seq=1085 confirmado
-[DATA] enviando seq=1086 tentativa=1/10
-[TIMEOUT] seq=1086 sem resposta, retransmitindo
-[DATA] enviando seq=1086 tentativa=2/10
-[ACK] seq=1086 confirmado
-[DATA] enviando seq=1087 tentativa=1/10
-[TIMEOUT] seq=1087 sem resposta, retransmitindo
-[DATA] enviando seq=1087 tentativa=2/10
-[ACK] seq=1087 confirmado
-[DATA] enviando seq=1088 tentativa=1/10
-[TIMEOUT] seq=1088 sem resposta, retransmitindo
-[DATA] enviando seq=1088 tentativa=2/10
-[ACK] seq=1088 confirmado
-[DATA] enviando seq=1089 tentativa=1/10
-[ACK] seq=1089 confirmado
-[DATA] enviando seq=1090 tentativa=1/10
-[ACK] seq=1090 confirmado
-[DATA] enviando seq=1091 tentativa=1/10
-[ACK] seq=1091 confirmado
-[DATA] enviando seq=1092 tentativa=1/10
-[ACK] seq=1092 confirmado
-[DATA] enviando seq=1093 tentativa=1/10
-[ACK] seq=1093 confirmado
-[DATA] enviando seq=1094 tentativa=1/10
-[ACK] seq=1094 confirmado
-[DATA] enviando seq=1095 tentativa=1/10
-[ACK] seq=1095 confirmado
-[DATA] enviando seq=1096 tentativa=1/10
-[ACK] seq=1096 confirmado
-[DATA] enviando seq=1097 tentativa=1/10
-[ACK] seq=1097 confirmado
-[DATA] enviando seq=1098 tentativa=1/10
-[ACK] seq=1098 confirmado
-[DATA] enviando seq=1099 tentativa=1/10
-[TIMEOUT] seq=1099 sem resposta, retransmitindo
-[DATA] enviando seq=1099 tentativa=2/10
-[ACK] seq=1099 confirmado
-[DATA] enviando seq=1100 tentativa=1/10
-[TIMEOUT] seq=1100 sem resposta, retransmitindo
-[DATA] enviando seq=1100 tentativa=2/10
-[ACK] seq=1100 confirmado
-[DATA] enviando seq=1101 tentativa=1/10
-[ACK] seq=1101 confirmado
-[DATA] enviando seq=1102 tentativa=1/10
-[ACK] seq=1102 confirmado
-[DATA] enviando seq=1103 tentativa=1/10
-[ACK] seq=1103 confirmado
-[DATA] enviando seq=1104 tentativa=1/10
-[TIMEOUT] seq=1104 sem resposta, retransmitindo
-[DATA] enviando seq=1104 tentativa=2/10
-[ACK] seq=1104 confirmado
-[DATA] enviando seq=1105 tentativa=1/10
-[TIMEOUT] seq=1105 sem resposta, retransmitindo
-[DATA] enviando seq=1105 tentativa=2/10
-[ACK] seq=1105 confirmado
-[DATA] enviando seq=1106 tentativa=1/10
-[ACK] seq=1106 confirmado
-[DATA] enviando seq=1107 tentativa=1/10
-[ACK] seq=1107 confirmado
-[DATA] enviando seq=1108 tentativa=1/10
-[ACK] seq=1108 confirmado
-[DATA] enviando seq=1109 tentativa=1/10
-[ACK] seq=1109 confirmado
-[DATA] enviando seq=1110 tentativa=1/10
-[ACK] seq=1110 confirmado
-[DATA] enviando seq=1111 tentativa=1/10
-[ACK] seq=1111 confirmado
-[DATA] enviando seq=1112 tentativa=1/10
-[TIMEOUT] seq=1112 sem resposta, retransmitindo
-[DATA] enviando seq=1112 tentativa=2/10
-[ACK] seq=1112 confirmado
-[DATA] enviando seq=1113 tentativa=1/10
-[TIMEOUT] seq=1113 sem resposta, retransmitindo
-[DATA] enviando seq=1113 tentativa=2/10
-[TIMEOUT] seq=1113 sem resposta, retransmitindo
-[DATA] enviando seq=1113 tentativa=3/10
-[ACK] seq=1113 confirmado
-[DATA] enviando seq=1114 tentativa=1/10
-[ACK] seq=1114 confirmado
-[DATA] enviando seq=1115 tentativa=1/10
-[ACK] seq=1115 confirmado
-[DATA] enviando seq=1116 tentativa=1/10
-[ACK] seq=1116 confirmado
-[DATA] enviando seq=1117 tentativa=1/10
-[ACK] seq=1117 confirmado
-[DATA] enviando seq=1118 tentativa=1/10
-[ACK] seq=1118 confirmado
-[DATA] enviando seq=1119 tentativa=1/10
-[TIMEOUT] seq=1119 sem resposta, retransmitindo
-[DATA] enviando seq=1119 tentativa=2/10
-[ACK] seq=1119 confirmado
-[DATA] enviando seq=1120 tentativa=1/10
-[ACK] seq=1120 confirmado
-[DATA] enviando seq=1121 tentativa=1/10
-[ACK] seq=1121 confirmado
-[DATA] enviando seq=1122 tentativa=1/10
-[ACK] seq=1122 confirmado
-[DATA] enviando seq=1123 tentativa=1/10
-[ACK] seq=1123 confirmado
-[DATA] enviando seq=1124 tentativa=1/10
-[ACK] seq=1124 confirmado
-[DATA] enviando seq=1125 tentativa=1/10
-[ACK] seq=1125 confirmado
-[DATA] enviando seq=1126 tentativa=1/10
-[ACK] seq=1126 confirmado
-[DATA] enviando seq=1127 tentativa=1/10
-[ACK] seq=1127 confirmado
-[DATA] enviando seq=1128 tentativa=1/10
-[ACK] seq=1128 confirmado
-[DATA] enviando seq=1129 tentativa=1/10
-[ACK] seq=1129 confirmado
-[DATA] enviando seq=1130 tentativa=1/10
-[ACK] seq=1130 confirmado
-[DATA] enviando seq=1131 tentativa=1/10
-[ACK] seq=1131 confirmado
-[DATA] enviando seq=1132 tentativa=1/10
-[TIMEOUT] seq=1132 sem resposta, retransmitindo
-[DATA] enviando seq=1132 tentativa=2/10
-[ACK] seq=1132 confirmado
-[DATA] enviando seq=1133 tentativa=1/10
-[ACK] seq=1133 confirmado
-[DATA] enviando seq=1134 tentativa=1/10
-[ACK] seq=1134 confirmado
-[DATA] enviando seq=1135 tentativa=1/10
-[ACK] seq=1135 confirmado
-[DATA] enviando seq=1136 tentativa=1/10
-[ACK] seq=1136 confirmado
-[DATA] enviando seq=1137 tentativa=1/10
-[ACK] seq=1137 confirmado
-[DATA] enviando seq=1138 tentativa=1/10
-[ACK] seq=1138 confirmado
-[DATA] enviando seq=1139 tentativa=1/10
-[ACK] seq=1139 confirmado
-[DATA] enviando seq=1140 tentativa=1/10
-[ACK] seq=1140 confirmado
-[DATA] enviando seq=1141 tentativa=1/10
-[ACK] seq=1141 confirmado
-[DATA] enviando seq=1142 tentativa=1/10
-[ACK] seq=1142 confirmado
-[DATA] enviando seq=1143 tentativa=1/10
-[ACK] seq=1143 confirmado
-[DATA] enviando seq=1144 tentativa=1/10
-[TIMEOUT] seq=1144 sem resposta, retransmitindo
-[DATA] enviando seq=1144 tentativa=2/10
-[ACK] seq=1144 confirmado
-[DATA] enviando seq=1145 tentativa=1/10
-[ACK] seq=1145 confirmado
-[DATA] enviando seq=1146 tentativa=1/10
-[ACK] seq=1146 confirmado
-[DATA] enviando seq=1147 tentativa=1/10
-[ACK] seq=1147 confirmado
-[DATA] enviando seq=1148 tentativa=1/10
-[ACK] seq=1148 confirmado
-[DATA] enviando seq=1149 tentativa=1/10
-[ACK] seq=1149 confirmado
-[DATA] enviando seq=1150 tentativa=1/10
-[ACK] seq=1150 confirmado
-[DATA] enviando seq=1151 tentativa=1/10
-[ACK] seq=1151 confirmado
-[DATA] enviando seq=1152 tentativa=1/10
-[ACK] seq=1152 confirmado
-[DATA] enviando seq=1153 tentativa=1/10
-[ACK] seq=1153 confirmado
-[DATA] enviando seq=1154 tentativa=1/10
-[ACK] seq=1154 confirmado
-[DATA] enviando seq=1155 tentativa=1/10
-[ACK] seq=1155 confirmado
-[DATA] enviando seq=1156 tentativa=1/10
-[ACK] seq=1156 confirmado
-[DATA] enviando seq=1157 tentativa=1/10
-[ACK] seq=1157 confirmado
-[DATA] enviando seq=1158 tentativa=1/10
-[ACK] seq=1158 confirmado
-[DATA] enviando seq=1159 tentativa=1/10
-[ACK] seq=1159 confirmado
-[DATA] enviando seq=1160 tentativa=1/10
-[ACK] seq=1160 confirmado
-[DATA] enviando seq=1161 tentativa=1/10
-[ACK] seq=1161 confirmado
-[DATA] enviando seq=1162 tentativa=1/10
-[ACK] seq=1162 confirmado
-[DATA] enviando seq=1163 tentativa=1/10
-[TIMEOUT] seq=1163 sem resposta, retransmitindo
-[DATA] enviando seq=1163 tentativa=2/10
-[ACK] seq=1163 confirmado
-[DATA] enviando seq=1164 tentativa=1/10
-[ACK] seq=1164 confirmado
-[DATA] enviando seq=1165 tentativa=1/10
-[ACK] seq=1165 confirmado
-[DATA] enviando seq=1166 tentativa=1/10
-[ACK] seq=1166 confirmado
-[DATA] enviando seq=1167 tentativa=1/10
-[ACK] seq=1167 confirmado
 [FIN] recebido com status=OK
 Arquivo enviado: output/arquivo_envio_trabalhoRedes2.txt
 Bytes enviados: 1050624
-Tempo de envio: 195.487039 s
-Throughput: 0.042995 Mbps
+Tempo de envio: 146.921984 s
+Throughput: 0.057207 Mbps
   SHA-256 confirmado: 2a2d494c41ea26194c2ab0de...

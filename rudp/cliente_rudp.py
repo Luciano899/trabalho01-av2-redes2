@@ -4,11 +4,10 @@ import hashlib
 import os
 import sys
 import time
-import base64
 
 HOST = 'servidor'
 PORTA = 12345
-CHUNK_SIZE = 900
+CHUNK_SIZE = 1100
 TIMEOUT = 0.5
 MAX_TENTATIVAS = 10
 ARQUIVO = 'output/arquivo_envio_trabalhoRedes2.txt'
@@ -51,17 +50,23 @@ def dividir_em_chunks(dados: bytes) -> list[bytes]:
 
     # percorre os dados pulando de CHUNK_SIZE em CHUNK_SIZE
     for inicio in range(0, len(dados), CHUNK_SIZE):
-
-        # define o final do bloco atual
         fim = inicio + CHUNK_SIZE
-
-        # extrai o pedaço correspondente
         chunk = dados[inicio:fim]
-
-        # adiciona na lista de chunks
         chunks.append(chunk)
 
     return chunks
+
+
+def juntar_cabecalho_com_payload(seq: int, chunk_bruto: bytes) -> bytes:
+    """Empacota cabeçalho JSON + delimitador + chunk bruto."""
+    metadados = {
+        'tipo': 'DATA',
+        'seq': seq,
+        'checksum_md5': calcular_checksum_md5(chunk_bruto),
+        'ts': time.time(),
+    }
+    header_json = empacotar_mensagem(metadados)
+    return header_json + b'\n\n' + chunk_bruto
 
 
 def realizar_handshake(socket_cliente: socket.socket, endereco_servidor: tuple,nome_arquivo: str,
@@ -103,13 +108,7 @@ def enviar_stop_and_wait(socket_cliente: socket.socket, endereco_servidor: tuple
     print(f'[DATA] iniciando envio SAW com {total} chunks')
 
     for chunk in chunks:
-        pacote = empacotar_mensagem({
-            'tipo': 'DATA',
-            'seq': seq_num,
-            'dado': base64.b64encode(chunk).decode('ascii'),
-            'checksum': calcular_checksum_md5(chunk),
-            'ts': time.time(),
-        })
+        pacote = juntar_cabecalho_com_payload(seq_num, chunk)
 
         tentativas = 0
         confirmado = False

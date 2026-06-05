@@ -1,0 +1,2 @@
+arquivo_origem,total_execucoes,vazao_media_mbps,vazao_minima_mbps,vazao_maxima_mbps,desvio_padrao_mbps,tempo_minimo_s,tempo_maximo_s,tempo_medio_s,desvio_padrao_tempo_s,tempo_total_s
+cenario_C.csv,30,0.411882,0.291175,1.408888,0.199647,5.965691,28.865824,22.320956,4.755141,669.628676

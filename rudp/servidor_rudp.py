@@ -1,43 +1,17 @@
-"""
-R-UDP — Servidor Confiável sobre UDP  |  Modo: Stop-and-Wait
-=============================================================
-Mecanismos implementados:
-  • Números de sequência por chunk
-  • ACK / NAK por pacote recebido
-  • Checksum MD5 por bloco (integridade)
-  • SHA-256 global do arquivo (validação fim-a-fim)
-  • Autenticação X-Custom-Auth com SHA-256 (Matrícula + Nome)
-
-Uso:
-    python rudp_servidor.py
-"""
-
 import socket
 import json
 import hashlib
 import os
 import time
-import base64
 
-# ─────────────────────────────────────────────────────────────
-# CONFIGURAÇÕES
-# ─────────────────────────────────────────────────────────────
 HOST        = '0.0.0.0'
 PORTA       = 12345
 TAM_BUFFER  = 65507          # tamanho máximo de datagrama UDP
 PASTA_SAIDA = './recebidos'
 
-# ─────────────────────────────────────────────────────────────
-# AUTENTICAÇÃO  ← substitua pelo seu dado real
-# ─────────────────────────────────────────────────────────────
 MATRICULA = '20249026761'
 NOME      = 'Luciano Sousa Barbosa'
 X_CUSTOM_AUTH  = hashlib.sha256((MATRICULA + NOME).encode()).hexdigest()
-
-
-# ─────────────────────────────────────────────────────────────
-# HELPERS DE PROTOCOLO
-# ─────────────────────────────────────────────────────────────
 
 def calcular_checksum_md5(dado: bytes) -> str:
     """MD5 do bloco — detecta corrupção bit-a-bit."""
@@ -74,9 +48,18 @@ def enviar_ack(sock: socket.socket, endereco: tuple, seq: int, ok: bool):
     sock.sendto(pacote_ack, endereco)
 
 
-# ─────────────────────────────────────────────────────────────
-# RECEPÇÃO STOP-AND-WAIT
-# ─────────────────────────────────────────────────────────────
+def separar_cabecalho_do_payload(pacote_recebido: bytes) -> tuple[dict | None, bytes]:
+    """Separa o cabeçalho JSON do payload bruto usando o delimitador \\n\\n."""
+    partes = pacote_recebido.split(b'\n\n', 1)
+    if len(partes) != 2:
+        print('[ERRO] Pacote híbrido sem delimitador válido.')
+        return None, b''
+
+    cabecalho_bytes, payload_bruto = partes
+    mensagem = desempacotar_mensagem(cabecalho_bytes)
+    return mensagem, payload_bruto
+
+
 
 def receber_saw(sock: socket.socket, cliente: tuple, meta: dict) -> bytes | None:
     """
@@ -98,13 +81,14 @@ def receber_saw(sock: socket.socket, cliente: tuple, meta: dict) -> bytes | None
             # sem pacote no timeout → cliente vai retransmitir por conta própria
             continue
 
-        mensagem = desempacotar_mensagem(pacote_recebido)
-        if mensagem is None or mensagem.get('tipo') != 'DATA':
+        mensagem, dado = separar_cabecalho_do_payload(pacote_recebido)
+        if mensagem is None:
+            continue
+        if mensagem.get('tipo') != 'DATA':
             continue                          # ignora pacotes inválidos/desconhecidos
 
-        seq      = mensagem['seq']
-        dado     = base64.b64decode(mensagem['dado'])
-        checksum_recebido = mensagem['checksum']
+        seq = mensagem['seq']
+        checksum_recebido = mensagem['checksum_md5']
 
         print(f'[DATA] recebido seq={seq} esperado={esperado_seq}')
 
@@ -132,9 +116,6 @@ def receber_saw(sock: socket.socket, cliente: tuple, meta: dict) -> bytes | None
     return b''.join(chunks_recebidos[i] for i in range(total_chunks))
 
 
-# ─────────────────────────────────────────────────────────────
-# LOOP PRINCIPAL
-# ─────────────────────────────────────────────────────────────
 
 def main():
     print('=' * 60)
@@ -167,7 +148,10 @@ def main():
             print(f'      Chunks  : {meta["total_chunks"]}')
             print(f'      Tamanho : {meta["tamanho"]} bytes')
 
-            # ── 2) Responde SYN-ACK ────────────────────────────
+            # 2) Marca o início da transferência.
+            inicio = time.perf_counter()
+
+            # 3) Responde SYN-ACK ────────────────────────────
             syn_ack = empacotar_mensagem({
                 'tipo' : 'SYN-ACK',
                 'modo' : 'SAW',
@@ -175,8 +159,7 @@ def main():
             })
             socket_servidor.sendto(syn_ack, cliente)
 
-            # ── 3) Recebe dados (Stop-and-Wait) ────────────────
-            inicio = time.perf_counter()
+            # 4) Recebe dados (Stop-and-Wait) ────────────────
             socket_servidor.settimeout(10)
             dados = receber_saw(socket_servidor, cliente, meta)
             socket_servidor.settimeout(60)
@@ -187,7 +170,7 @@ def main():
                 print('[ERRO] Transferência falhou.\n')
                 continue
 
-            # ── 4) Valida SHA-256 global do arquivo ────────────
+            # 5) Valida SHA-256 global do arquivo ────────────
             sha_calculado = hashlib.sha256(dados).hexdigest()
             if sha_calculado != meta.get('sha256_arquivo'):
                 print('[ERRO] SHA-256 global não confere — arquivo descartado.')
@@ -198,7 +181,7 @@ def main():
                 }), cliente)
                 continue
 
-            # ── 5) Salva arquivo ───────────────────────────────
+            # 6) Salva arquivo ───────────────────────────────
             destino = os.path.join(PASTA_SAIDA, meta['nome_arquivo'])
             with open(destino, 'wb') as f:
                 f.write(dados)
